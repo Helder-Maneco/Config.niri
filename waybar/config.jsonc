@@ -9,7 +9,7 @@
 
     "modules-left": [
          "custom/power",
-         "hyprland/workspaces",
+         "niri/workspaces",
           "tray",
        "mpris"
     ],
@@ -25,22 +25,20 @@
         "temperature"
     ],
 
-      "hyprland/workspaces": {
+      "niri/workspaces": {
         "format": "{icon}",
         "icon-size": 10,
         "format-icons": {
             "1": "一",
-            "2": "二",
+            "2": "二・",
             "3": "三",
             "4": "四",
             "5": "五",
-            "empty": "・"
-        },
-        "persistent-workspaces": {
-            "1": [], "2": [], "3": [], "4": [], "5": []
-        },
-        "on-click": "hyprctl dispatch workspace {name}"
-    },
+            "empty": "二"
+        }
+      },
+        
+      
 
     "tray": {
         "icon-size": 21,

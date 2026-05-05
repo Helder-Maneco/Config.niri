@@ -9,7 +9,7 @@ vim.keymap.set('n', '<C-`>', '<CMD>botright split | resize 10 | term<CR>i', { de
 vim.opt.clipboard = "unnamedplus"
 -- Navegar para a próxima aba com Ctrl + Tab
 vim.keymap.set('n', '<C-Tab>', ':BufferLineCycleNext<CR>', { silent = true })
-
+vim.g.mapleader = " " -- Aqui, o espaço foi definido como leader
 -- Navegar para a aba anterior com Ctrl + Shift + Tab
 vim.keymap.set('n', '<C-S-Tab>', ':BufferLineCyclePrev<CR>', { silent = true })
 -- 2. A MAGIA: Ao clicar Esc dentro do terminal, ele fecha a janela automaticamente

@@ -109,7 +109,56 @@ fi
 # 8. PERMISSIONS
 # ============================================================
 chmod +x ~/dotfiles/install.sh
+# ============================================================
 
+
+# 9. TERMINAL ASCENSION (ZSH & STARSHIP)
+# ============================================================
+echo "Rebuilding terminal interface..."
+
+# Instalação das ferramentas core
+sudo pacman -S --needed zsh starship zsh-autosuggestions zsh-syntax-highlighting
+
+# Definir Zsh como shell padrão se ainda não for
+if [ "$SHELL" != "$(which zsh)" ]; then
+    echo "Elevating shell status to Zsh..."
+    chsh -s $(which zsh)
+fi
+
+# Configuração do Starship (Configuração via Link)
+mkdir -p ~/.config
+create_link ~/dotfiles/starship/starship.toml ~/.config/starship.toml
+
+# Geração do .zshrc otimizado
+# Nota: Estou injetando os plugins e o init do Starship
+cat <<EOF > ~/.zshrc
+# Neural Bridges - Plugins e Ferramentas
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Starship Initialization
+eval "\$(starship init zsh)"
+
+# Backend Aliases (Node/TypeScript)
+alias n="npm"
+alias b="bun"
+alias ts="ts-node"
+
+# System Aliases
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias ..="cd .."
+
+# FNM Environment
+export PATH="\$HOME/.local/share/fnm:\$PATH"
+eval "\$(fnm env)"
+
+# Bun Environment
+export BUN_INSTALL="\$HOME/.bun"
+export PATH="\$BUN_INSTALL/bin:\$PATH"
+EOF
+
+echo "Terminal Reconstruction: Complete."
 # ============================================================
 # DONE
 # ============================================================

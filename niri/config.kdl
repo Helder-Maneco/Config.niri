@@ -1,7 +1,10 @@
 // ============================================================
 //  config.kdl — Niri (Protocolo de Estabilidade Máxima)
 // ============================================================
-
+hotkey-overlay {
+    skip-at-startup
+ hide-not-bound  // para activar
+}
 input {
     keyboard {
         xkb {
@@ -110,7 +113,7 @@ binds {
     // Sistema
     F1 { spawn "systemctl" "hibernate"; }
     End { spawn "systemctl" "poweroff"; }
-    Ctrl+Grave { spawn "sh" "-c" "killall waybar || waybar"; }
+    Ctrl+Escape { spawn "sh" "-c" "killall waybar || waybar"; }
     Alt+V { spawn "sh" "-c" "cliphist list | anyrun --plugins /etc/anyrun/plugins/libstdin.so | cliphist decode | wl-copy"; }
 
     // Screenshots
@@ -156,4 +159,7 @@ binds {
     Mod+O repeat=false { toggle-overview; }
     Mod+Shift+E  { quit; }
     Mod+Escape { toggle-keyboard-shortcuts-inhibit; }
+
 }
+
+

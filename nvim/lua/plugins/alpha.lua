@@ -6,16 +6,19 @@ return {
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
 
-    -- Header
+-- Header
 dashboard.section.header.val = {
-    "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗  ",
-    "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║  ",
-    "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║  ",
-    "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║  ",
-    "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║  ",
-    "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝  ",
-}
-    dashboard.section.header.opts = {
+    [[ ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ]],
+    [[ ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ]],
+    [[ ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║ ]],
+    [[ ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ]],
+    [[ ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ]],
+    [[ ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ]],
+    [[                                                        ]],
+    [[                  A R C H  -  B A C K E N D             ]],
+   }
+
+dashboard.section.header.opts = {
       hl = "AlphaHeader",
       position = "center",
     }
@@ -23,9 +26,10 @@ dashboard.section.header.val = {
 
     -- Botões
     dashboard.section.buttons.val = {
-      dashboard.button("f", "󰍉  Procurar ficheiro", ":Telescope find_files<CR>"),
-      dashboard.button("r", "  Recentes",           ":Telescope oldfiles<CR>"),
-      dashboard.button("e", "  Novo buffer",        ":ene <BAR> startinsert<CR>"),
+      dashboard.button("f", "󰍉  Search Files", ":Telescope find_files<CR>"),
+      dashboard.button("r", "󰯂  Recent",           ":Telescope oldfiles<CR>"),
+      dashboard.button("e", "  New File",        ":ene <BAR> startinsert<CR>"),
+      dashboard.button("q", "󰅙  Quit", ":q!<CR>"),
     }
 
     alpha.setup(dashboard.opts)
