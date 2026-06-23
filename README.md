@@ -1,4 +1,4 @@
-# 🧪 The Cyber-Scientific Sanctuary (Arch/Hyprland Dotfiles)
+# 🧪 The Cyber-Scientific Sanctuary (Arch/Niri Dotfiles)
 > "Science is not magic, sir. It's simply what happens when you stop using the mouse like a caveman."
 
 Welcome to my configuration repository. Herein lies proof that human patience is finite, but the capacity to customise Arch Linux is infinite. This is not merely a collection of `.conf` files — it is the scientific blueprint for elite-level efficiency.
@@ -7,135 +7,17 @@ Welcome to my configuration repository. Herein lies proof that human patience is
 
 | Module | Description | Excitement Level |
 | :--- | :--- | :--- |
-| **Hyprland** | Where window physics happen. No lag — pure logic. | 10,000,000,000% |
+| **Niri** | Scroll infinito guiado por física pura. Janelas em fita contínua — lógica matemática pura. | 10,000,000,000% |
 | **Waybar** | A status bar so clean it would make a microscope feel inadequate. | Absurd |
-| **Neovim** | Where backend development comes alive through Lua. If you use VS Code, I grieve for your primitive soul. | Vital |
-| **AnyRun** | The elite launcher. Extensible, fast, and built for those who have no patience for primitive interfaces. | Superior |
-| **Yazi** | The definitive CLI file manager for the Arch Linux + Hyprland ecosystem. | Supreme |
-| **ZSH** | O shell definitivo. O Starship traz um prompt em Rust que detecta seu ambiente Backend (Node/TS) instantaneamente. | 10,000,000,000% | 
+| **Neovim** | O trono do desenvolvimento (Node/C++/C#). Se você usa VS Code convencional, eu grieffo para sua alma primitiva. | Vital |
+| **Fuzzel** | O menu dmenu-mode definitivo no Wayland. Rápido, minimalista e integrado com Cliphist para controle absoluto de clipboard. | Superior |
+| **Yazi** | The definitive CLI file manager for the Arch Linux ecosystem. | Supreme |
+| **ZSH + Core** | Shell puro-sangue. Customizado via script para TTY fosforoso verde, completamento via `zstyle` e histórico infinito com FZF. | Absurd | 
 
 ## 🚀 Scientific Protocol — Installation
 
-If you are a promising lab colleague, you already know not to skip steps. Follow the logical process — one step at a time.
+Se você é um colega de laboratório promissor, sabe que scripts não são mágica. A reconstrução do mundo é feita através do terminal:
 
-**1. Clone this anomaly:**
+**1. Clone este repositório:**
 ```bash
-git clone https://github.com/flixgamerd/Hyprland-Config.git ~/dotfiles
-```
-
-**2. Elite bridging (symlinks):**
-Do not create redundant folders like a caveman. The commands below establish the correct neural connections:
-```bash
-ln -s ~/dotfiles/waybar   ~/.config/waybar
-ln -s ~/dotfiles/anyrun   ~/.config/anyrun
-ln -s ~/dotfiles/nvim     ~/.config/nvim
-ln -s ~/dotfiles/hypr     ~/.config/hypr
-ln -s ~/dotfiles/yazi     ~/.config/yazi
-```
-
-**3. The awakening:**
-Ensure your wallpaper path is not a ghost variable. `awww` requires absolute paths to avoid an existential crisis:
-```bash
-# In your hyprland.conf:
-exec-once = awww-daemon && sleep 0.5 && awww img "/home/user/dotfiles/wallpapers/Wave.jpg"
-```
-
-## 📸 The Aesthetic Blueprint — Visual Documentation
-
-### System Diagnostics & Architecture
-The foundation of any civilized setup. Your machine's heartbeat, rendered with scientific precision.
-
-![Arch Linux System Diagnostics — fastfetch reveals an Intel Celeron J4025 @ 799 MHz operating with 2.38 GiB RAM. Adequate for those who understand that elegance scales inversely with bloat.](./screenshots/20260413_230917.png)
-
-### Editor Throne: Neovim
-Where the actual work happens. Lua configurations, zero compromises, and keyboard supremacy. VS Code users are not invited to this section.
-
-![Neovim LSP integration — alpha-nvim greets you with monochromatic refinement. No distractions. Only logic.](./screenshots/20260413_230936.png)
-
-### Aesthetic Materialization: The Great Wave
-The wallpaper philosophy made manifest. Katsushika Hokusai meets Hyprland. Proof that scientific precision and visual poetry are not mutually exclusive.
-
-![The Great Wave off Kanagawa — inverted palette, rendered in near-black and ethereal white. Your desktop environment is now indistinguishable from a Ukiyo-e print.](./screenshots/20260413_231047.png)
-
-### System Monitoring in Real-Time
-btop displaying CPU, memory, disk, and network metrics. The machine talks; you listen.
-
-![btop monitoring dashboard — Celeron J4025 at 23% load, 2.05 GiB RAM consumed, 74% disk utilization. The system whispers its vital signs.](./screenshots/20260413_231057.png)
-
-## 🎨 Theming Architecture
-
-Your environment is composed of three interconnected aesthetic layers:
-
-- **Hyprland Borders & Decorations**: Configured via `hyprland.conf` for crisp window management.
-- **Waybar CSS**: Flat design, monochromatic elegance, responsive to system state.
-- **Neovim Theme**: `kanagawa-wave` with custom highlights — syntax that respects your retinas at 2300 hours.
-- **AnyRun Launcher**: Manthey palette initially, evolved to Montanha green, now refined to Great Wave aesthetics.
-
-All components share a unified color philosophy: **minimal, purposeful, scientifically justified**.
-
-## 🔧 Configuration Topology
-
-```
-dotfiles/
-├── hypr/
-│   ├── hyprland.conf          # Core window manager configuration
-│   ├── hyprpaper.conf         # Wallpaper daemon settings
-│   └── hypridle.conf           # Idle behavior & screensaver integration
-├── waybar/
-│   ├── config.jsonc           # Bar structure & modules
-│   └── style.css              # Visual refinement
-├── nvim/
-│   ├── init.lua               # Entry point
-│   ├── lazy-lock.json         # Dependency lock
-│   └── lua/
-│       ├── config/            # Core settings
-│       ├── plugins/           # Plugin specifications
-│       └── lsp/               # Language server configurations
-├── anyrun/
-│   └── config.ron             # Launcher behavior
-├── yazi/
-│   ├── yazi.toml              # File manager config
-│   └── theme.toml             # Color scheme
-└── wallpapers/
-    └── Wave.jpg               # The Great Wave (inverted aesthetic)
-```
-
-## 🧬 Scientific Dependencies
-
-Ensure these packages are installed:
-
-```bash
-pacman -S hyprland waybar neovim yazi anyrun btop wl-clipboard awww
-```
-
-Optional but recommended:
-```bash
-pacman -S grimblast        # Wayland-native screenshots
-pacman -S wf-recorder      # Screen recording without compromising FPS
-pacman -S dunst            # Notification daemon (minimal)
-```
-### 🐚 Terminal Ascension
-The primitive `bash` has been purged. The system now utilizes **Zsh** augmented by **Starship**.
-
-- **Prompt**: Starship (Rust-powered, ultra-fast).
-- **Plugins**: `zsh-autosuggestions` (because memory is for computers, not scientists) and `zsh-syntax-highlighting`.
-- **Logic**: Intelligent environment detection for Node.js/TypeScript projects.
-
-## 🚦 Current Status
-
-| Component | Version | Status |
-| :--- | :--- | :--- |
-| Arch Linux | Latest | ✓ Rolling |
-| Hyprland | v0.x+ | ✓ Active |
-| Neovim | 0.10+ | ✓ Optimized |
-| Waybar | Latest | ✓ Refined |
-| Yazi | Latest | ✓ Deployed |
-| ZSH  | Lastest | ✓ Rolling |
-## 📝 License
-
-This configuration is provided as-is. Modify it. Break it. Rebuild it better. Science is iterative.
-
----
-
-**Last updated:** April 2026  
-**Maintained by:** flixgamerd (Flix)  
+git clone [https://github.com/flixgamerd/Niri-Config.git](https://github.com/flixgamerd/Niri-Config.git) ~/dotfiles

@@ -30,7 +30,7 @@
         "icon-size": 10,
         "format-icons": {
             "1": "一",
-            "2": "二・",
+            "2": "二",
             "3": "三",
             "4": "四",
             "5": "五",
@@ -82,6 +82,7 @@
         
         "on-click": "kitty --class btop_float -e btop"
     },
+// 
     "memory": {
         "format": " {}%",
         "on-click": "kitty --class btop_float -e btop"

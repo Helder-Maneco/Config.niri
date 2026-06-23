@@ -1,29 +1,30 @@
 * {
-  font-family: JetBrainsMonoNerdFontPropo, Noto Sans CJK JP;
+  font-family: 'JetBrainsMono Nerd Font', 'Noto Sans CJK JP';
   font-size: 18px;
   border: none;
 }
 
-/* ── Paleta Onda (Hokusai monochrome) ── */
-@define-color wave-bg     rgba(5, 5, 8, 0.92);
-@define-color wave-active #E8E8E8;
-@define-color wave-glow   #B0B8C0;
-@define-color wave-border rgba(176, 184, 192, 0.35);
-@define-color wave-dim    #5A5A5A;
-@define-color wave-muted  #8A8A8A;
-@define-color wave-deep   #0D0D10;
+/* ── Paleta Hack (Extraída da imagem) ── */
+@define-color hack-bg      rgba(10, 16, 14, 0.94); /* Escuro das sombras da sala */
+@define-color hack-active  #00FF9D;                /* Verde/Ciano neon brilhante dos monitores */
+@define-color hack-glow    #10F3A5;                /* Brilho secundário da tela */
+@define-color hack-border  rgba(16, 243, 165, 0.25);/* Linha sutil com reflexo esverdeado */
+@define-color hack-dim     #1F4D42;                /* Verde terminal escuro (inativo) */
+@define-color hack-muted   #528A7E;                /* Verde acinzentado dos cabos/ferragens */
+@define-color hack-deep    #050807;                /* Black total do rack de servidores */
 
 /* ── Waybar: retângulo único flutuante ── */
 window#waybar {
   background: transparent;
-  color: @wave-glow;
+  color: @hack-muted;
 }
 window#waybar > box {
-  background-color: @wave-bg;
-  border: 1.2px solid @wave-border;
+  background-color: @hack-bg;
+  border: 1.2px solid @hack-border;
   border-radius: 10px;
   margin: 0;
   padding: 0 4px;
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.05); /* Leve aura verde ao redor da barra */
 }
 
 /* ── Módulos: sem fundo próprio ── */
@@ -54,24 +55,24 @@ button {
 #workspaces button {
   padding: 2px 10px;
   margin: 2px 3px;
-  color: @wave-dim;
+  color: @hack-dim;
   background: none;
 }
 #workspaces button.active {
-  color: @wave-active;
+  color: @hack-active;
   font-weight: bold;
-  text-shadow: 0 0 4px @wave-glow;
-  box-shadow: inset 0 -2px @wave-glow;
-  animation: foam-pulse 0.18s ease-out;
+  text-shadow: 0 0 6px @hack-glow; /* Efeito de monitor CRT brilhando */
+  box-shadow: inset 0 -2px @hack-active;
+  animation: terminal-pulse 0.25s ease-out;
 }
 #workspaces button.urgent {
-  color: @wave-muted;
-  text-shadow: 0 0 6px @wave-active;
+  color: #FF5555; /* Cor de alerta clássica para criticidade */
+  text-shadow: 0 0 8px #FF0000;
 }
-@keyframes foam-pulse {
-  0%   { color: @wave-active; }
-  50%  { color: @wave-glow;   }
-  100% { color: @wave-active; }
+@keyframes terminal-pulse {
+  0%   { text-shadow: 0 0 2px @hack-glow; }
+  50%  { text-shadow: 0 0 10px @hack-active; }
+  100% { text-shadow: 0 0 6px @hack-glow; }
 }
 
 /* ── Clock ── */
@@ -79,11 +80,11 @@ button {
   padding: 2px 10px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: @wave-active;
+  color: @hack-active;
+  text-shadow: 0 0 4px @hack-glow;
 }
 
 /* ── Módulos da direita ── */
-
 #network,
 #wireplumber,
 #tray,
@@ -98,15 +99,26 @@ button {
 #custom-notifications {
   background: transparent;
   padding: 2px 10px;
-   margin-left: 10px;
-  color: @wave-glow;
+  margin-left: 10px;
+  color: @hack-muted;
 }
+
+/* Estado de destaque para quando passar o mouse */
+#network:hover,
+#wireplumber:hover,
+#cpu:hover,
+#memory:hover {
+  color: @hack-active;
+  text-shadow: 0 0 4px @hack-glow;
+}
+
 #network.disconnected {
-  color: @wave-dim;
+  color: @hack-dim;
   padding: 2px 10px;
 }
+
 #custom-power:hover,
 #custom-spotify:hover {
-  color: @wave-active;
+  color: @hack-active;
   padding: 2px 10px;
 }
