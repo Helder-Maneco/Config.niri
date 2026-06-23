@@ -11,7 +11,7 @@ Welcome to my configuration repository. Herein lies proof that human patience is
 | **Waybar** | Uma barra de status tão limpa que faria um microscópio parecer inadequado. | Absurd |
 | **Neovim** | O trono do desenvolvimento (Node/C++/PostgreSQL). Se você usa VS Code convencional, eu grieffo para sua alma primitiva. | Vital |
 | **Fuzzel** | O menu dmenu-mode definitivo no Wayland. Rápido, minimalista e integrado com Cliphist para controle absoluto de clipboard. | Superior |
-| **Yazi** | The definitive CLI file manager for the Arch Linux ecosystem. | Supreme |
+| **Yazi** | O gerenciador de arquivos CLI definitivo para o ecossistema Arch Linux. | Supreme |
 | **ZSH + Core** | Shell puro-sangue. Customizado via script para TTY fosforoso verde, completamento via `zstyle` e histórico infinito com FZF. | Absurd | 
 
 ## 🚀 Scientific Protocol — Installation
