@@ -5,7 +5,7 @@ Bem-vindo ao meu repositório de configuração. Aqui reside a prova de que a pa
 
 ## 🛠️ Componentes do Laboratório — Diagnóstico Rápido
 
-| Módulo | Descrição | Nível importância|
+| Módulo | Descrição | Nível de importância|
 | :--- | :--- | :--- |
 | **Niri** | Scroll infinito guiado por física pura. Janelas em fita contínua — lógica matemática pura. | 10.000.000.000% |
 | **Waybar** | Uma barra de status tão limpa que faria um microscópio se sentir inadequado. | Absurdo |
