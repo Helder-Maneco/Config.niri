@@ -1,11 +1,11 @@
 # 🧪 O Santuário Ciber-Científico (Dotfiles do Arch/Niri)
-> "A ciência não é mágica, senhor. É simplesmente o que acontece quando você para de usar o mouse como um homem das cavernas."
+> "A ciência não é mágica. É simplesmente o que acontece quando você para de usar o mouse como um homem das cavernas."
 
 Bem-vindo ao meu repositório de configuração. Aqui reside a prova de que a paciência humana é finita, mas a capacidade de customizar o Arch Linux é infinita. Isso não é meramente uma coleção de arquivos `.conf` — é o blueprint científico para eficiência de nível de elite.
 
 ## 🛠️ Componentes do Laboratório — Diagnóstico Rápido
 
-| Módulo | Descrição | Nível de Empolgamento |
+| Módulo | Descrição | Nível importância|
 | :--- | :--- | :--- |
 | **Niri** | Scroll infinito guiado por física pura. Janelas em fita contínua — lógica matemática pura. | 10.000.000.000% |
 | **Waybar** | Uma barra de status tão limpa que faria um microscópio se sentir inadequado. | Absurdo |
