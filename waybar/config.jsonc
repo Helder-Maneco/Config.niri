@@ -8,10 +8,10 @@
     "spacing": 0,
 
     "modules-left": [
-         "custom/power",
-         "niri/workspaces",
-          "tray",
-       "mpris"
+        "custom/power",
+        "niri/workspaces",
+	"tray",
+	"mpris"
     ],
     "modules-center": [
         "clock"
@@ -80,12 +80,12 @@
     "cpu": {
         "format": " {usage}%",
         
-        "on-click": "kitty --class btop_float -e btop"
+        "on-click": "kitty --class gotop_float -e gotop"
     },
 // 
     "memory": {
         "format": " {}%",
-        "on-click": "kitty --class btop_float -e btop"
+        "on-click": "kitty --class gotop_float -e gotop"
     },
     "temperature": {
                "critical-threshold": 80,

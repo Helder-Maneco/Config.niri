@@ -69,10 +69,16 @@ layout {
     shadow {
         off
     }
+
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
 }
 
 prefer-no-csd
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
