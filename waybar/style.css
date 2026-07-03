@@ -26,7 +26,7 @@ window#waybar > box {
   padding: 0 6px;
 }
 
-/* ── Módulos: sem fundo próprio ── */
+/* ── Módulos: sem fundo próprio (o contêiner, não o bloco) ── */
 .modules-left,
 .modules-center,
 .modules-right {
@@ -36,65 +36,12 @@ window#waybar > box {
   margin: 0;
 }
 
-/* ── Botões gerais ── */
-button {
-  background: none;
-  box-shadow: none;
-  border: none;
-  margin: 2px 16px;
-  padding: 2px 10px;
-  transition: color 0.15s ease-out, background 0.15s ease-out;
-}
-
-/* ── Workspaces (niri/workspaces) ── */
-#workspaces {
-  background: transparent;
-}
-#workspaces button {
-  padding: 2px 12px;
-  margin: 2px 6px;
-  color: @meta-dim;
-  background: @meta-border;
-  border: 1px solid @meta-border;
-  border-radius: 3px;
-}
-#workspaces button.active {
-  color: @meta-active;
-  font-weight: bold;
-  background: @meta-hover;
-  box-shadow: inset 0 -2px @meta-accent;
-}
-#workspaces button:hover {
-  background: @meta-hover;
-}
-
-/* ── Menu arrow / caneta (esquerda) ── */
+/* ── Bloco padrão — agora sempre "aceso" ── */
+#workspaces button,
 #custom-menu-arrow,
-#custom-pen {
-  color: @meta-muted;
-  padding: 2px 14px;
-  margin: 0 10px;
-}
-#custom-menu-arrow:hover,
-#custom-pen:hover {
-  color: @meta-active;
-}
-
-/* ── Busca (centro) ── */
-#custom-search {
-  color: @meta-active;
-  padding: 2px 14px;
-  font-size: 20px;
-}
-
-/* ── Clock ── */
-#clock {
-  padding: 2px 16px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: @meta-active;
-}
-/* ── Módulos da direita (espaçamento ampliado e uniforme) ── */
+#custom-pen,
+#custom-search,
+#clock,
 #network,
 #bluetooth,
 #tray,
@@ -104,20 +51,38 @@ button {
 #temperature,
 #cpu,
 #memory {
-  background: transparent;
+  background: @meta-hover;
+  border: 1px solid @meta-accent;
+  border-radius: 3px;
   padding: 2px 12px;
-  margin: 0 10px;
-  color: @meta-muted;
+  margin: 2px 6px;
+  color: @meta-active;
+  font-weight: 600;
+  transition: color 0.15s ease-out, background 0.15s ease-out;
 }
 
+/* ── Workspace ativo recebe destaque extra sobre o "aceso" padrão ── */
+#workspaces button.active {
+  background: @meta-accent;
+  color: @meta-bg;
+  box-shadow: inset 0 -2px @meta-active;
+}
+
+/* ── Hover — vai além do "aceso", intensifica o contraste ── */
+#workspaces button:hover,
+#custom-menu-arrow:hover,
+#custom-pen:hover,
 #network:hover,
 #bluetooth:hover,
 #pulseaudio:hover,
 #battery:hover,
 #cpu:hover,
 #memory:hover {
-  color: @meta-active;
+  background: @meta-accent;
+  color: @meta-bg;
 }
+
 #network.disconnected {
   color: @meta-dim;
+  background: @meta-border;
 }

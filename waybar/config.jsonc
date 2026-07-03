@@ -7,16 +7,16 @@
     "margin-top": 7,
     "spacing": 0,
 
-    "modules-left": [
+"modules-left": [
         "custom/power",
         "niri/workspaces",
 	"tray",
 	"mpris"
     ],
-    "modules-center": [
+"modules-center": [
         "clock"
     ],
-    "modules-right": [
+"modules-right": [
         "pulseaudio",
         "network",
         "cpu",
@@ -25,7 +25,7 @@
         "temperature"
     ],
 
-      "niri/workspaces": {
+"niri/workspaces": {
         "format": "{icon}",
         "icon-size": 10,
         "format-icons": {
@@ -37,22 +37,19 @@
             "empty": "二"
         }
       },
-        
-      
-
-    "tray": {
+"tray": {
         "icon-size": 21,
         "spacing": 10
    },
 
-    "clock": { 
+"clock": { 
      "timezone": "Africa/Luanda",
      "format": " {:%H:%M}",
      "format-alt": "{:%A, %d %b %Y — %H:%M:%S}",
      "interval": 10
 },
     
-     "mpris": {
+"mpris": {
     "player": "spotify",
     "format": "{status_icon} {title} - {artist}",
     "format-paused": "{player_icon} {status_icon}",
@@ -76,63 +73,52 @@
       "tooltip-format": "{title} - {artist} Album: {album}"
 },
 
-
-    "cpu": {
-        "format": " {usage}%",
-        
-        "on-click": "kitty --class gotop_float -e gotop"
+"cpu": {
+             "format": " {usage}%",
+             "on-click": "kitty --class gotop_float -e gotop"
     },
-// 
-    "memory": {
-        "format": " {}%",
-        "on-click": "kitty --class gotop_float -e gotop"
+"memory": {
+              "format": " {}%",
+              "on-click": "kitty --class gotop_float -e gotop"
     },
-    "temperature": {
-               "critical-threshold": 80,
-       
-        "format-icons": [""],
-        "format": " {icon} {temperatureC}°C"
+"temperature": {
+              "critical-threshold": 80,
+              "format-icons": [""],
+              "format": " {icon} {temperatureC}°C"
     },
 
-    "network": {
-    "format-wifi": "{icon}",
-    "format-ethernet": "󰈀",
-    "format-disconnected": "󰤮",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "tooltip-format": "{essid} - {signalStrength}%"
+"network": {
+              "format-wifi": "{icon} {signalStrength}%",
+              "format-ethernet": "󰈀",
+              "format-disconnected": "󰤮",
+              "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+              "tooltip-format": "{essid} - {signalStrength}%"
 },
 
-		"disk": {
-    "interval": 30,
-    "path": "/",
-    "format": "󱛟 {free}",
-    "format-alt": "󱛟 {percentage_free}% livre",
-    "on-click": "kitty --class btop_float -e df -h",
-    "tooltip-format": "{used} usados de {total} ({percentage_used}% cheio)"
+"disk": {
+           "interval": 30,
+           "path": "/",
+           "format": "󱛟 {free}",
+           "format-alt": "󱛟 {percentage_free}% livre",
+           "on-click": "kitty --class btop_float -e df -h",
+           "tooltip-format": "{used} usados de {total} ({percentage_used}% cheio)"
 },
-    "pulseaudio": {
-              "format": "{icon}",
+"pulseaudio": {
+           "format": "{icon}",
 	   "format-icons": ["", "", " "],
-        "format-bluetooth": "",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "on-click": "pavucontrol"
+           "format-bluetooth": "",
+           "format-bluetooth-muted": " {icon} {format_source}",
+           "on-click": "pavucontrol"
     },
-    "custom/media": {
+"custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
-            "spotify": "",
-            "default": "🎜"
+        "spotify": "",
+        "default": "🎜"
         },
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" 
-    },
-    "custom/power": {
-        "format" : " 󰣇 ",
-		"tooltip": false
-
-		}
-
-    
+    }
 }
