@@ -57,19 +57,18 @@ layout {
     default-column-width { proportion 0.5; }
     focus-ring {
         width 3
-        active-color "#7EE8FF"    // Facho de luz ciano no topo da torre
-        inactive-color "#0B161E"  // Céu noturno petróleo profundo
+        active-color "#DCCFAF"
+        inactive-color "#4A4234"
     }
     border {
         off
         width 3
-        active-color "#A9E4DC"    // Brilho secundário, quase branco-azulado
-        inactive-color "#0B161E"  // Mesma base do céu noturno
+        active-color "#C9BD9F"
+        inactive-color "#4A4234"
     }
     shadow {
         off
     }
-
 }
 
 window-rule {
