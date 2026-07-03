@@ -8,7 +8,7 @@ map ctrl+tab next_tab
 # Navegar para a aba anterior (opcional, mas recomendado)
 map ctrl+shift+tab previous_tab
 # BEGIN_KITTY_THEME
-# Arthur
+# Adwaita darker
 include current-theme.conf
 # END_KITTY_THEME
 

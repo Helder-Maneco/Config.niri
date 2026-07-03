@@ -4,27 +4,27 @@
   border: none;
 }
 
-/* ── Paleta Hack (Extraída da imagem) ── */
-@define-color hack-bg      rgba(10, 16, 14, 0.94); /* Escuro das sombras da sala */
-@define-color hack-active  #00FF9D;                /* Verde/Ciano neon brilhante dos monitores */
-@define-color hack-glow    #10F3A5;                /* Brilho secundário da tela */
-@define-color hack-border  rgba(16, 243, 165, 0.25);/* Linha sutil com reflexo esverdeado */
-@define-color hack-dim     #1F4D42;                /* Verde terminal escuro (inativo) */
-@define-color hack-muted   #528A7E;                /* Verde acinzentado dos cabos/ferragens */
-@define-color hack-deep    #050807;                /* Black total do rack de servidores */
+/* ── Paleta Metropolis (Extraída da imagem) ── */
+@define-color meta-bg      rgba(11, 22, 30, 0.94);  /* Azul-petróleo profundo do céu noturno */
+@define-color meta-active  #7EE8FF;                 /* Ciano-claro do facho de luz no topo do arranha-céu */
+@define-color meta-glow    #A9E4DC;                 /* Brilho secundário, quase branco-azulado */
+@define-color meta-border  rgba(201, 168, 118, 0.25);/* Contorno sutil dourado das fachadas */
+@define-color meta-dim     #3A5568;                 /* Azul-acinzentado das sombras (inativo) */
+@define-color meta-muted   #C9A876;                 /* Dourado-areia das torres */
+@define-color meta-deep    #060D12;                 /* Preto-azulado profundo do vão entre prédios */
 
 /* ── Waybar: retângulo único flutuante ── */
 window#waybar {
   background: transparent;
-  color: @hack-muted;
+  color: @meta-muted;
 }
 window#waybar > box {
-  background-color: @hack-bg;
-  border: 1.2px solid @hack-border;
+  background-color: @meta-bg;
+  border: 1.2px solid @meta-border;
   border-radius: 10px;
   margin: 0;
   padding: 0 4px;
-  box-shadow: 0 0 15px rgba(0, 255, 157, 0.05); /* Leve aura verde ao redor da barra */
+  box-shadow: 0 0 15px rgba(126, 232, 255, 0.06); /* Aura ciano suave, ecoando o facho de luz */
 }
 
 /* ── Módulos: sem fundo próprio ── */
@@ -55,24 +55,24 @@ button {
 #workspaces button {
   padding: 2px 10px;
   margin: 2px 3px;
-  color: @hack-dim;
+  color: @meta-dim;
   background: none;
 }
 #workspaces button.active {
-  color: @hack-active;
+  color: @meta-active;
   font-weight: bold;
-  text-shadow: 0 0 6px @hack-glow; /* Efeito de monitor CRT brilhando */
-  box-shadow: inset 0 -2px @hack-active;
-  animation: terminal-pulse 0.25s ease-out;
+  text-shadow: 0 0 6px @meta-glow; /* Réplica do brilho do arranha-céu ao fundo */
+  box-shadow: inset 0 -2px @meta-active;
+  animation: skyline-pulse 0.25s ease-out;
 }
 #workspaces button.urgent {
-  color: #FF5555; /* Cor de alerta clássica para criticidade */
-  text-shadow: 0 0 8px #FF0000;
+  color: #FF6B4A; /* Tom terracota/alerta, ecoando os letreiros avermelhados na base dos prédios */
+  text-shadow: 0 0 8px #FF3300;
 }
-@keyframes terminal-pulse {
-  0%   { text-shadow: 0 0 2px @hack-glow; }
-  50%  { text-shadow: 0 0 10px @hack-active; }
-  100% { text-shadow: 0 0 6px @hack-glow; }
+@keyframes skyline-pulse {
+  0%   { text-shadow: 0 0 2px @meta-glow; }
+  50%  { text-shadow: 0 0 10px @meta-active; }
+  100% { text-shadow: 0 0 6px @meta-glow; }
 }
 
 /* ── Clock ── */
@@ -80,8 +80,8 @@ button {
   padding: 2px 10px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: @hack-active;
-  text-shadow: 0 0 4px @hack-glow;
+  color: @meta-active;
+  text-shadow: 0 0 4px @meta-glow;
 }
 
 /* ── Módulos da direita ── */
@@ -100,7 +100,7 @@ button {
   background: transparent;
   padding: 2px 10px;
   margin-left: 10px;
-  color: @hack-muted;
+  color: @meta-muted;
 }
 
 /* Estado de destaque para quando passar o mouse */
@@ -108,17 +108,15 @@ button {
 #wireplumber:hover,
 #cpu:hover,
 #memory:hover {
-  color: @hack-active;
-  text-shadow: 0 0 4px @hack-glow;
+  color: @meta-active;
+  text-shadow: 0 0 4px @meta-glow;
 }
-
 #network.disconnected {
-  color: @hack-dim;
+  color: @meta-dim;
   padding: 2px 10px;
 }
-
 #custom-power:hover,
 #custom-spotify:hover {
-  color: @hack-active;
+  color: @meta-active;
   padding: 2px 10px;
 }
