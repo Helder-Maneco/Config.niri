@@ -1,4 +1,4 @@
-# 🧪 The Cyber-Scientific Sanctuary (Arch/Niri Dotfiles)
+# The Cyber-Scientific Sanctuary (Arch/Niri Dotfiles)
 
 > "Science isn't magic. It's simply what happens when you stop using the mouse like a caveman."
 
