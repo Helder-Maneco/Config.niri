@@ -3,7 +3,7 @@
 // ============================================================
 hotkey-overlay {
     skip-at-startup
- hide-not-bound  // para activar
+ hide-not-bound
 }
 input {
     keyboard {
@@ -39,12 +39,11 @@ environment {
 }
 
 spawn-at-startup "waybar"
-spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "udiskie"
 spawn-at-startup "sh" "-c" "wl-paste --type text --watch cliphist store"
 spawn-at-startup "sh" "-c" "wl-paste --type image --watch cliphist store"
 spawn-at-startup "sh" "-c" "cliphist wipe"
-spawn-at-startup "sh" "-c" "awww-daemon --format xrgb && sleep 1 && awww img /home/flix/dotfiles/wallpapers/full-Black.jpg"
+spawn-at-startup "sh" "-c" "awww-daemon --format xrgb && sleep 1 && awww img /home/flix/dotfiles/wallpapers/metropolis.png"
 spawn-at-startup "sh" "-c" "hyprctl setcursor Adwaita 27"
 
 layout {
@@ -80,7 +79,7 @@ prefer-no-csd
 screenshot-path "~/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"brave$"# title="^Picture-in-Picture$"
     open-floating true
 }
 binds {
@@ -89,7 +88,7 @@ binds {
     // Aplicações
     Mod+T { spawn "kitty"; }
     Mod+Space { spawn "fuzzel"; }
-    Mod+Shift+Z { spawn "zen-browser"; }
+    Mod+Shift+b { spawn "brave"; }
     Mod+Y { spawn "kitty" "-e" "yazi"; }
     Menu { spawn "sh" "-c" "kitty nvim"; }
     Mod+Shift+O { spawn "obsidian"; }

@@ -3,7 +3,7 @@
     "layer": "top",
     "position": "top",
     "height": 36,
-    "width": 1800,
+    "width": 1900,
     "margin-top": 7,
     "spacing": 0,
 
@@ -75,11 +75,11 @@
 
 "cpu": {
              "format": " {usage}%",
-             "on-click": "kitty --class gotop_float -e gotop"
+             "on-click": "kitty --class btop_float -e btop"
     },
 "memory": {
               "format": " {}%",
-              "on-click": "kitty --class gotop_float -e gotop"
+              "on-click": "kitty --class btop_float -e btop"
     },
 "temperature": {
               "critical-threshold": 80,

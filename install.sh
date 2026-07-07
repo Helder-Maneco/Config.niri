@@ -1,5 +1,5 @@
 #!/bin/bash
-# Protocolo Flix-Linux: Script de Reconstrução de Mundo (Versão Niri de Elite)
+# Protocolo Flix-Linux: Script de Reconstrução de Mundo (Versão Niri)
 # Alvo: Arch Linux | Foco: Niri, Waybar, Fuzzel & Backend (JS/TS)
 
 set -e
@@ -12,7 +12,7 @@ echo "Initiating Rapid Diagnostics and Scientific Installation..."
 echo "Injecting system packages and essential tools..."
 sudo pacman -S --needed \
     niri waybar kitty git curl \
-    neovim ttf-jetbrains-mono-nerd ttf-fira-code-nerd \
+    neovim ttf-jetbrains-mono-nerd Noto Sans CJK JP\
     yazi udisks2 udiskie p7zip \
     usbutils libmtp gvfs gvfs-mtp gvfs-gphoto2 \
     libgphoto2 mtpfs \
@@ -46,8 +46,8 @@ create_link() {
     rm -rf "$2"
     ln -s "$1" "$2"
     echo "Bridge created: $2 -> $1"
+    mkdir ~/dotfiles/
 }
-
 create_link ~/dotfiles/niri     ~/.config/niri
 create_link ~/dotfiles/waybar   ~/.config/waybar
 create_link ~/dotfiles/fuzzel   ~/.config/fuzzel
