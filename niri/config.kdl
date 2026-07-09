@@ -71,7 +71,8 @@ layout {
 }
 
 window-rule {
-    geometry-corner-radius 12
+ match app-id="kitty" 
+ geometry-corner-radius 12
     clip-to-geometry true
 }
 

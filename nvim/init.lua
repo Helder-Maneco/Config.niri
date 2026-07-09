@@ -51,4 +51,11 @@ vim.api.nvim_set_hl(0, "NvimTreeEmptyFolderName", { fg = "#abb2bf" })
 vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#abb2bf" })
 -- Isso mantém os ícones, mas remove as cores "carnaval"
 vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#abb2bf" })
+vim.cmd([[
+  highlight Normal guibg=none ctermbg=none
+  highlight NonText guibg=none ctermbg=none
+  highlight NormalNC guibg=none ctermbg=none
+  highlight SignColumn guibg=none ctermbg=none
+  highlight StatusLine guibg=none ctermbg=none
+]])
 vim.api.nvim_set_hl(0, "NvimTreeFileIcon", { fg = "#abb2bf" })
