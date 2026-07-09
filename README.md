@@ -19,6 +19,11 @@ Welcome to my configuration repository. Here lies the proof that human patience 
 ![Matrix for fun](Screenshots/matrix.png)
 
 ---
+
+> **Fuzzel(launcher)**
+![Fuzzel](Screenshots/Fuzzel.png)
+
+---
 ## 🛠️ Laboratory Components — Quick Diagnostic
 
 | Module | Description | Importance Level |
