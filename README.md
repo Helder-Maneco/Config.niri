@@ -10,12 +10,15 @@ Welcome to my configuration repository. Here lies the proof that human patience 
 > **Desktop**
 ![Setup Preview](Screenshots/imagemv1.0.png)
 
+---
 > **Terminal Preview**
 ![Terminal Preview](Screenshots/terminal.png)
 
+---
 > **Terminal(Matrix)**
 ![Matrix for fun](Screenshots/matrix.png)
 
+---
 ## 🛠️ Laboratory Components — Quick Diagnostic
 
 | Module | Description | Importance Level |
