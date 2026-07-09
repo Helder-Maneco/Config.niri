@@ -8,6 +8,12 @@ Welcome to my configuration repository. Here lies the proof that human patience 
 
 ![Setup Preview](Screenshots/imagem.png)
 
+
+![Terminal Preview](Screenshots/terminal.png)
+
+
+![Matrix for fun](Screenshots/matrix.png)
+
 ## 🛠️ Laboratory Components — Quick Diagnostic
 
 | Module | Description | Importance Level |
@@ -18,6 +24,7 @@ Welcome to my configuration repository. Here lies the proof that human patience 
 | **Fuzzel** | The definitive dmenu-mode launcher on Wayland. Fast, minimalist, and integrated with Cliphist for absolute clipboard control. | Superior |
 | **Yazi** | The definitive CLI file manager for the Arch Linux ecosystem. | Supreme |
 | **ZSH + Core** | Pure-blood shell. Customized via script for phosphor-green TTY, `zstyle` completion, and infinite FZF-powered history. | Absurd |
+| **Kitty** | Emulador de terminal acelerado por GPU. Configurado sob medida com fundo sólido bege Metropolis, rastro de cursor dinâmico e tipografia JetBrainsMono milimetricamente calibrada para erradicar o cansaço visual. | Absurd |
 
 ## 🚀 Scientific Protocol — Installation
 
