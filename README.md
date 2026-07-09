@@ -6,7 +6,7 @@ Welcome to my configuration repository. Here lies the proof that human patience 
 
 > **Inspired by:** [diinki/linux-retroism](https://github.com/diinki/linux-retroism.git) — full credit to the original vision that sparked this setup.
 
-![Setup Preview](Screenshots/imagem.png)
+![Setup Preview](Screenshots/imagemv1.0.png)
 
 
 ![Terminal Preview](Screenshots/terminal.png)
