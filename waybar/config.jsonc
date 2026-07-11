@@ -63,7 +63,6 @@
         "playing": "▶",
         "stopped": "■"
     },
-     "ignored-players": ["zen-browser"],
      "max-length": 25,
      "interval": 1,
      "on-click": "playerctl -p spotify play-pause ",
@@ -75,11 +74,11 @@
 
 "cpu": {
              "format": " {usage}%",
-             "on-click": "kitty --class btop_float -e btop"
+             "on-click": "kitty --class htop_float -e htop"
     },
 "memory": {
               "format": " {}%",
-              "on-click": "kitty --class btop_float -e btop"
+              "on-click": "kitty --class htop_float -e htop"
     },
 "temperature": {
               "critical-threshold": 80,
@@ -99,9 +98,7 @@
            "interval": 30,
            "path": "/",
            "format": "󱛟 {free}",
-           "format-alt": "󱛟 {percentage_free}% livre",
-           "on-click": "kitty --class btop_float -e df -h",
-           "tooltip-format": "{used} usados de {total} ({percentage_used}% cheio)"
+	   "on-click": "kitty --class dysk_float --hold -e dysk"
 },
 "pulseaudio": {
            "format": "{icon}",
