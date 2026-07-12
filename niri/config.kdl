@@ -27,7 +27,7 @@ output "HDMI-A-2" {
 
 environment {
     XCURSOR_THEME "Adwaita"
-    XCURSOR_SIZE "27"
+    XCURSOR_SIZE "48"
     QT_QPA_PLATFORMTHEME "qt6ct"
     QT_QPA_PLATFORM "wayland;xcb"
     GDK_BACKEND "wayland,x11,*"
@@ -44,8 +44,7 @@ spawn-at-startup "sh" "-c" "wl-paste --type text --watch cliphist store"
 spawn-at-startup "sh" "-c" "wl-paste --type image --watch cliphist store"
 spawn-at-startup "sh" "-c" "cliphist wipe"
 spawn-at-startup "sh" "-c" "awww-daemon --format xrgb && sleep 1 && awww img /home/flix/dotfiles/wallpapers/metropolis.png"
-spawn-at-startup "sh" "-c" "hyprctl setcursor Adwaita 27"
-
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "XCURSOR_THEME=Adwaita" "XCURSOR_SIZE=48"
 layout {
     gaps 10
     preset-column-widths {
