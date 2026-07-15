@@ -45,6 +45,7 @@ spawn-at-startup "sh" "-c" "wl-paste --type image --watch cliphist store"
 spawn-at-startup "sh" "-c" "cliphist wipe"
 spawn-at-startup "sh" "-c" "awww-daemon --format xrgb && sleep 1 && awww img /home/flix/dotfiles/wallpapers/metropolis.png"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "XCURSOR_THEME=Adwaita" "XCURSOR_SIZE=48"
+
 layout {
     gaps 10
     preset-column-widths {
@@ -55,14 +56,14 @@ layout {
     default-column-width { proportion 0.5; }
     focus-ring {
         width 3
-        active-color "#DCCFAF"
-        inactive-color "#4A4234"
+        active-color "#26E664"
+        inactive-color "#15301B"
     }
     border {
         off
         width 3
-        active-color "#C9BD9F"
-        inactive-color "#4A4234"
+        active-color "#26E664"
+        inactive-color "#15301B"
     }
     shadow {
         off
@@ -70,7 +71,7 @@ layout {
 }
 
 window-rule {
-  geometry-corner-radius 12
+    geometry-corner-radius 12
     clip-to-geometry true
 }
 

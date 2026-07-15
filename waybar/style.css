@@ -4,14 +4,14 @@
   border: none;
 }
 
-/* ── Paleta extraída da imagem (bege/creme) ── */
-@define-color meta-bg      #e6dcc7;
-@define-color meta-active  #2b2620;
-@define-color meta-border  #c9bd9f;
-@define-color meta-dim     #a89a78;
-@define-color meta-muted   #4a4234;
-@define-color meta-hover   #dccfaf;
-@define-color meta-accent  #8a7c5c;
+/* ── Paleta Cyberpunk extraída da imagem ── */
+@define-color meta-bg      #080c0a; /* Fundo super escuro (chassis de metal/gabinete) */
+@define-color meta-active  #26e664; /* Verde neon brilhante (monitores CRT/Matrix) */
+@define-color meta-border  #15301b; /* Verde escuro metálico (placas de circuito) */
+@define-color meta-dim     #597a61; /* Verde fosco/apagado (texto inativo/antigo) */
+@define-color meta-muted   #8fbfa0; /* Verde pastel suave para textos gerais */
+@define-color meta-hover   #122416; /* Fundo dos blocos "acesos" padrão (verde terminal escuro) */
+@define-color meta-accent  #f07124; /* Laranja/Âmbar brilhante (teclado e lâmpadas) */
 
 /* ── Waybar: retângulo único flutuante ── */
 window#waybar {
@@ -26,7 +26,7 @@ window#waybar > box {
   padding: 0 6px;
 }
 
-/* ── Módulos: sem fundo próprio (o contêiner, não o bloco) ── */
+/* ── Módulos: sem fundo próprio ── */
 .modules-left,
 .modules-center,
 .modules-right {
@@ -36,7 +36,7 @@ window#waybar > box {
   margin: 0;
 }
 
-/* ── Bloco padrão — agora sempre "aceso" ── */
+/* ── Bloco padrão — agora com visual de terminal ativo ── */
 #workspaces button,
 #custom-menu-arrow,
 #custom-pen,
@@ -52,23 +52,23 @@ window#waybar > box {
 #cpu,
 #memory {
   background: @meta-hover;
-  border: 1px solid @meta-accent;
+  border: 1px solid @meta-accent; /* Detalhe em laranja âmbar nas bordas */
   border-radius: 3px;
   padding: 2px 12px;
   margin: 2px 6px;
-  color: @meta-active;
+  color: @meta-active; /* Texto brilhando em verde neon */
   font-weight: 600;
   transition: color 0.15s ease-out, background 0.15s ease-out;
 }
 
-/* ── Workspace ativo recebe destaque extra sobre o "aceso" padrão ── */
+/* ── Workspace ativo recebe destaque extra em Laranja Âmbar ── */
 #workspaces button.active {
   background: @meta-accent;
   color: @meta-bg;
-  box-shadow: inset 0 -2px @meta-active;
+  box-shadow: inset 0 -2px @meta-active; /* Linha inferior em verde neon */
 }
 
-/* ── Hover — vai além do "aceso", intensifica o contraste ── */
+/* ── Hover — transiciona do verde para o laranja âmbar ao passar o mouse ── */
 #workspaces button:hover,
 #custom-menu-arrow:hover,
 #custom-pen:hover,
