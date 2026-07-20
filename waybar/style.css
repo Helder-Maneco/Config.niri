@@ -5,7 +5,7 @@
 }
 
 /* ── Paleta Cyberpunk extraída da imagem ── */
-@define-color meta-bg      #080c0a; /* Fundo super escuro (chassis de metal/gabinete) */
+@define-color meta-bg      #07181E;/* Fundo super escuro (chassis de metal/gabinete) */
 @define-color meta-active  #26e664; /* Verde neon brilhante (monitores CRT/Matrix) */
 @define-color meta-border  #15301b; /* Verde escuro metálico (placas de circuito) */
 @define-color meta-dim     #597a61; /* Verde fosco/apagado (texto inativo/antigo) */
