@@ -1,0 +1,34 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "auto",
+        "source": "~/Imagens/pi.png",
+        "width": 18,
+        "height": 9,
+        "padding": {
+            "top": 2,       // Mantém o espaço entre o comando e a imagem
+            "right": 4
+        }
+    },
+    "display": {
+        "separator": "  ",
+        "color": "white",
+        "key": {
+            "width": 10
+        }
+    },
+    "modules": [
+        { "type": "custom", "format": " " }, // Espaço 1
+        { "type": "custom", "format": " " }, // Espaço 2
+        { "type": "custom", "format": " " }, // Espaço 3 (ajuste se necessário)
+        { "type": "os", "key": "OS" },
+        { "type": "kernel", "key": "KERNEL" },
+        { "type": "shell", "key": "SHELL" },
+        { "type": "terminal", "key": "TERM" },
+        { "type": "cpu", "key": "CPU" },
+        { "type": "gpu", "key": "GPU" },
+        { "type": "memory", "key": "RAM" },
+        { "type": "disk", "key": "DISK" },
+        { "type": "break" }
+    ]
+}
