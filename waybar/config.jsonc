@@ -9,7 +9,7 @@
 
 "modules-left": [
         "custom/power",
-        "niri/workspaces",
+        "hyprland/workspaces",
 	"tray",
 	"mpris"
     ],
@@ -25,7 +25,7 @@
         "temperature"
     ],
 
-"niri/workspaces": {
+"hyprland/workspaces": {
         "format": "{icon}",
         "icon-size": 10,
         "format-icons": {

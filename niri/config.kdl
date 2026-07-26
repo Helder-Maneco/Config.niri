@@ -37,7 +37,8 @@ environment {
     MOZ_ENABLE_WAYLAND "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
-
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=Niri" "XDG_SESSION_TYPE=wayland"
 spawn-at-startup "waybar"
 spawn-at-startup "udiskie"
 spawn-at-startup "sh" "-c" "wl-paste --type text --watch cliphist store"
@@ -168,7 +169,6 @@ binds {
     Mod+O repeat=false { toggle-overview; }
     Mod+Shift+E  { quit; }
     Mod+Shift+Escape { toggle-keyboard-shortcuts-inhibit; }
-
 }
 
 
