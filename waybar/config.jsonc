@@ -1,15 +1,14 @@
-// -*- mode: jsonc -*-
 {
     "layer": "top",
     "position": "top",
     "height": 36,
-    "width": 1900,
+    "width": 1800,
     "margin-top": 7,
     "spacing": 0,
 
 "modules-left": [
         "custom/power",
-        "hyprland/workspaces",
+        "niri/workspaces",
 	"tray",
 	"mpris"
     ],
@@ -21,11 +20,10 @@
         "network",
         "cpu",
         "memory",
-	"disk",
         "temperature"
     ],
 
-"hyprland/workspaces": {
+"niri/workspaces": {
         "format": "{icon}",
         "icon-size": 10,
         "format-icons": {
@@ -87,25 +85,19 @@
     },
 
 "network": {
-              "format-wifi": "{icon} {signalStrength}%",
+              "format-wifi": "{icon} ",
               "format-ethernet": "󰈀",
               "format-disconnected": "󰤮",
               "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-              "tooltip-format": "{essid} - {signalStrength}%"
+              "tooltip-format": "{essid} - {signalStrength}%",
+              "on-click": "kitty --class impala_float -e impala"
 },
 
-"disk": {
-           "interval": 30,
-           "path": "/",
-           "format": "󱛟 {free}",
-	   "on-click": "kitty --class dysk_float --hold -e dysk"
-},
 "pulseaudio": {
            "format": "{icon}",
 	   "format-icons": ["", "", " "],
            "format-bluetooth": "",
-           "format-bluetooth-muted": " {icon} {format_source}",
-           "on-click": "pavucontrol"
+           "format-bluetooth-muted": " {icon} {format_source}"
     },
 "custom/media": {
         "format": "{icon} {text}",

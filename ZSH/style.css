@@ -1,0 +1,88 @@
+* {
+  font-family: 'JetBrainsMono Nerd Font', 'Noto Sans CJK JP';
+  font-size: 18px;
+  border: none;
+}
+
+/* ── Paleta Cyberpunk extraída da imagem ── */
+@define-color meta-bg      #07181E;/* Fundo super escuro (chassis de metal/gabinete) */
+@define-color meta-active  #26e664; /* Verde neon brilhante (monitores CRT/Matrix) */
+@define-color meta-border  #15301b; /* Verde escuro metálico (placas de circuito) */
+@define-color meta-dim     #597a61; /* Verde fosco/apagado (texto inativo/antigo) */
+@define-color meta-muted   #8fbfa0; /* Verde pastel suave para textos gerais */
+@define-color meta-hover   #122416; /* Fundo dos blocos "acesos" padrão (verde terminal escuro) */
+@define-color meta-accent  #f07124; /* Laranja/Âmbar brilhante (teclado e lâmpadas) */
+
+/* ── Waybar: retângulo único flutuante ── */
+window#waybar {
+  background: transparent;
+  color: @meta-muted;
+}
+window#waybar > box {
+  background-color: @meta-bg;
+  border: 1.2px solid @meta-border;
+  border-radius: 6px;
+  margin: 0;
+  padding: 0 6px;
+}
+
+/* ── Módulos: sem fundo próprio ── */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+  border: none;
+  padding: 2px 8px;
+  margin: 0;
+}
+
+/* ── Bloco padrão — agora com visual de terminal ativo ── */
+#workspaces button,
+#custom-menu-arrow,
+#custom-pen,
+#custom-search,
+#clock,
+#network,
+#bluetooth,
+#tray,
+#pulseaudio,
+#battery,
+#disk,
+#temperature,
+#cpu,
+#memory {
+  background: @meta-hover;
+  border: 1px solid @meta-accent; /* Detalhe em laranja âmbar nas bordas */
+  border-radius: 3px;
+  padding: 2px 12px;
+  margin: 2px 6px;
+  color: @meta-active; /* Texto brilhando em verde neon */
+  font-weight: 600;
+  transition: color 0.15s ease-out, background 0.15s ease-out;
+}
+
+/* ── Workspace ativo recebe destaque extra em Laranja Âmbar ── */
+#workspaces button.active {
+  background: @meta-accent;
+  color: @meta-bg;
+  box-shadow: inset 0 -2px @meta-active; /* Linha inferior em verde neon */
+}
+
+/* ── Hover — transiciona do verde para o laranja âmbar ao passar o mouse ── */
+#workspaces button:hover,
+#custom-menu-arrow:hover,
+#custom-pen:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover {
+  background: @meta-accent;
+  color: @meta-bg;
+}
+
+#network.disconnected {
+  color: @meta-dim;
+  background: @meta-border;
+}

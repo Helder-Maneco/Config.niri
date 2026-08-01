@@ -4,23 +4,23 @@
   border: none;
 }
 
-/* ── Paleta Cyberpunk extraída da imagem ── */
-@define-color meta-bg      #07181E;/* Fundo super escuro (chassis de metal/gabinete) */
-@define-color meta-active  #26e664; /* Verde neon brilhante (monitores CRT/Matrix) */
-@define-color meta-border  #15301b; /* Verde escuro metálico (placas de circuito) */
-@define-color meta-dim     #597a61; /* Verde fosco/apagado (texto inativo/antigo) */
-@define-color meta-muted   #8fbfa0; /* Verde pastel suave para textos gerais */
-@define-color meta-hover   #122416; /* Fundo dos blocos "acesos" padrão (verde terminal escuro) */
-@define-color meta-accent  #f07124; /* Laranja/Âmbar brilhante (teclado e lâmpadas) */
+/* ── Paleta Manga Noir / High-Contrast ── */
+@define-color meta-bg      #101010; /* Preto equilibrado (asfalto/sombras) */
+@define-color meta-active  #EAE8E1; /* Branco puro e aceso (faróis/efeitos de ação) */
+@define-color meta-border  #383838; /* Cinza grafite estrutural */
+@define-color meta-dim     #575e68; /* Cinza escuro para itens desativados */
+@define-color meta-muted   #d1d5db; /* Branco papíreo fosco (texto principal) */
+@define-color meta-hover   #1c1c1c; /* Fundo levemente mais claro para os blocos */
+@define-color meta-accent  #e2e8f0; /* Branco cinzento brilhante para destaque e bordas */
 
 /* ── Waybar: retângulo único flutuante ── */
 window#waybar {
   background: transparent;
   color: @meta-muted;
 }
+
 window#waybar > box {
   background-color: @meta-bg;
-  border: 1.2px solid @meta-border;
   border-radius: 6px;
   margin: 0;
   padding: 0 6px;
@@ -36,7 +36,7 @@ window#waybar > box {
   margin: 0;
 }
 
-/* ── Bloco padrão — agora com visual de terminal ativo ── */
+/* ── Bloco padrão — sem bordas ── */
 #workspaces button,
 #custom-menu-arrow,
 #custom-pen,
@@ -52,23 +52,23 @@ window#waybar > box {
 #cpu,
 #memory {
   background: @meta-hover;
-  border: 1px solid @meta-accent; /* Detalhe em laranja âmbar nas bordas */
-  border-radius: 3px;
+  border: none; /* Bordas removidas */
+  border-radius: 6px;
   padding: 2px 12px;
-  margin: 2px 6px;
-  color: @meta-active; /* Texto brilhando em verde neon */
+  margin: 2px 4px;
+  color: @meta-muted;
   font-weight: 600;
-  transition: color 0.15s ease-out, background 0.15s ease-out;
+  transition: all 0.15s ease-out;
 }
 
-/* ── Workspace ativo recebe destaque extra em Laranja Âmbar ── */
+/* ── Workspace ativo recebe efeito de inversão ── */
 #workspaces button.active {
-  background: @meta-accent;
+  background: @meta-muted;
   color: @meta-bg;
-  box-shadow: inset 0 -2px @meta-active; /* Linha inferior em verde neon */
+  border: none;
 }
 
-/* ── Hover — transiciona do verde para o laranja âmbar ao passar o mouse ── */
+/* ── Hover — transiciona para branco aceso ao passar o mouse ── */
 #workspaces button:hover,
 #custom-menu-arrow:hover,
 #custom-pen:hover,
@@ -80,9 +80,11 @@ window#waybar > box {
 #memory:hover {
   background: @meta-accent;
   color: @meta-bg;
+  border: none;
 }
 
 #network.disconnected {
   color: @meta-dim;
-  background: @meta-border;
+  background: @meta-bg;
+  border: none;
 }

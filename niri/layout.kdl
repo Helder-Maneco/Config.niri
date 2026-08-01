@@ -1,0 +1,50 @@
+layout {
+    gaps 5
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+	off
+    }
+
+    border {
+        off
+    }
+
+    shadow {
+        off
+    }
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+prefer-no-csd
+screenshot-path "~/Imagens/Screenshots/screenshot from %Y-%m-%d %H-%M-%S.png"
+
+window-rule {
+    match app-id=r#"brave$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+overview {
+    backdrop-color "#0001"
+}
+animations {
+  slowdown 1.4
+}
+
+
+blur {
+    passes 2        
+    offset 2.0
+    noise 0.02
+    saturation 1
+}
+
