@@ -26,15 +26,15 @@ Welcome to my configuration repository. Here lies the proof that human patience 
 ---
 ## 🛠️ Laboratory Components — Quick Diagnostic
 
-| Module | Description | Importance Level |
-| :--- | :--- | :--- |
-| **Niri** | Infinite scroll guided by pure physics. Windows on a continuous strip — pure mathematical logic. | 10,000,000,000% |
-| **Waybar** | A status bar so clean it would make a microscope feel inadequate. | Absurd |
-| **Neovim** | The throne of development (Node/C++/PostgreSQL). If you use conventional VS Code, I mourn for your primitive soul. | Vital |
-| **Fuzzel** | The definitive dmenu-mode launcher on Wayland. Fast, minimalist, and integrated with Cliphist for absolute clipboard control. | Superior |
-| **Yazi** | The definitive CLI file manager for the Arch Linux ecosystem. | Supreme |
-| **ZSH + Core** | Pure-blood shell. Customized via script for phosphor-green TTY, `zstyle` completion, and infinite FZF-powered history. | Absurd |
-| **Kitty** | GPU-accelerated terminal emulator. Custom configured with a solid beige Metropolis background, dynamic cursor trail, and JetBrainsMono typography meticulously calibrated to eliminate eye strain. | Absurd |
+| Module | Description |
+| :--- | :--- |
+| **Niri** | Infinite scroll guided by pure physics. Windows on a continuous strip — pure mathematical logic. |
+| **Waybar** | A status bar so clean it would make a microscope feel inadequate. |
+| **Neovim** | The throne of development (Node/C++/PostgreSQL). If you use conventional VS Code, I mourn for your primitive soul. |
+| **Fuzzel** | The definitive dmenu-mode launcher on Wayland. Fast, minimalist, and integrated with Cliphist for absolute clipboard control. |
+| **Yazi** | The definitive CLI file manager for the Arch Linux ecosystem. |
+| **ZSH + Core** | Pure-blood shell. `zstyle` completion, and infinite FZF-powered history. |
+| **Kitty** | GPU-accelerated terminal emulator. Custom configured with a solid beige Metropolis background, dynamic cursor trail, and JetBrainsMono typography meticulously calibrated to eliminate eye strain. |
 
 ## 🚀 Scientific Protocol — Installation
 
