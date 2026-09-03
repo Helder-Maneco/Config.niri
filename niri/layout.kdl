@@ -29,12 +29,12 @@ prefer-no-csd
 screenshot-path "~/Imagens/Screenshots/screenshot from %Y-%m-%d %H-%M-%S.png"
 
 window-rule {
-    match app-id=r#"brave$"# title="^Picture-in-Picture$"
+    match app-id=r#"^helium$"# title=r#"^(Picture-in-Picture|Imagem em imagem)$"#
     open-floating true
 }
 
 overview {
-    backdrop-color "#0001"
+    backdrop-color "#1f0f08a1" 
 }
 animations {
   slowdown 1.4

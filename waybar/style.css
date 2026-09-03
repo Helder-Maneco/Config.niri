@@ -3,29 +3,25 @@
   font-size: 18px;
   border: none;
 }
-
-/* ── Paleta Manga Noir / High-Contrast ── */
-@define-color meta-bg      #101010; /* Preto equilibrado (asfalto/sombras) */
-@define-color meta-active  #EAE8E1; /* Branco puro e aceso (faróis/efeitos de ação) */
-@define-color meta-border  #383838; /* Cinza grafite estrutural */
-@define-color meta-dim     #575e68; /* Cinza escuro para itens desativados */
-@define-color meta-muted   #d1d5db; /* Branco papíreo fosco (texto principal) */
-@define-color meta-hover   #1c1c1c; /* Fundo levemente mais claro para os blocos */
-@define-color meta-accent  #e2e8f0; /* Branco cinzento brilhante para destaque e bordas */
-
+/* ── Paleta Retro Gaming Room (baseada no wallpaper) ── */
+@define-color meta-bg      #170f08; /* Preto acastanhado quente (sombras do quarto) */
+@define-color meta-active  #ffb454; /* Âmbar do candeeiro (destaque principal) */
+@define-color meta-border  #4a3220; /* Castanho madeira (painel/secretária) */
+@define-color meta-dim     #6b5138; /* Castanho apagado para itens desativados */
+@define-color meta-muted   #e8cda3; /* Creme papíreo quente (texto principal) */
+@define-color meta-hover   #241608; /* Fundo levemente mais claro para os blocos */
+@define-color meta-accent  #5ecfc9; /* Ciano do ecrã CRT (Byte Blaster) para destaque/hover */
 /* ── Waybar: retângulo único flutuante ── */
 window#waybar {
   background: transparent;
   color: @meta-muted;
 }
-
 window#waybar > box {
   background-color: @meta-bg;
   border-radius: 6px;
   margin: 0;
   padding: 0 6px;
 }
-
 /* ── Módulos: sem fundo próprio ── */
 .modules-left,
 .modules-center,
@@ -35,7 +31,6 @@ window#waybar > box {
   padding: 2px 8px;
   margin: 0;
 }
-
 /* ── Bloco padrão — sem bordas ── */
 #workspaces button,
 #custom-menu-arrow,
@@ -52,7 +47,7 @@ window#waybar > box {
 #cpu,
 #memory {
   background: @meta-hover;
-  border: none; /* Bordas removidas */
+  border: none;
   border-radius: 6px;
   padding: 2px 12px;
   margin: 2px 4px;
@@ -60,15 +55,13 @@ window#waybar > box {
   font-weight: 600;
   transition: all 0.15s ease-out;
 }
-
-/* ── Workspace ativo recebe efeito de inversão ── */
+/* ── Workspace ativo — brilho âmbar do candeeiro ── */
 #workspaces button.active {
-  background: @meta-muted;
+  background: @meta-active;
   color: @meta-bg;
   border: none;
 }
-
-/* ── Hover — transiciona para branco aceso ao passar o mouse ── */
+/* ── Hover — transiciona para o ciano do ecrã CRT ── */
 #workspaces button:hover,
 #custom-menu-arrow:hover,
 #custom-pen:hover,
@@ -82,7 +75,6 @@ window#waybar > box {
   color: @meta-bg;
   border: none;
 }
-
 #network.disconnected {
   color: @meta-dim;
   background: @meta-bg;

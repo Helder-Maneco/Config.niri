@@ -61,17 +61,25 @@ bindkey "^r" fzf-history-widget
 #zle -N openfff
 #bindkey '^f' openfff
 
-# Custom Promp Matrix Edition
-NEWLINE=$'\n'
-PROMPT="  %c %f%k❯ "
- alias matrix='~/Codigos_Arch/Scripts/matrix.zsh'
+# Habilita a substituição de parâmetros no prompt do Zsh
+setopt PROMPT_SUBST
+
+# Indicador em Laranja Quente (Sucesso) e Vermelho Retro (Erro/Root)
+PROMPT_CHAR="%(?:%F{214}❯%f:%F{160}❯%f)"
+[ "$EUID" -eq 0 ] && PROMPT_CHAR="%F{160}❯%f"
+
+# Prompt minimalista estilo Kali sem Hostname
+PROMPT="%F{130}┌──(%F{208}%n%F{130})-[%F{223}%c%F{130}]
+└─%B\${PROMPT_CHAR}%b "
+
+ alias matrix='~/Templates/Scripts/matrix.zsh'
  alias Limpeza="~/Codigos_Arch/Scripts/Limpeza.zsh"
  alias niconf='nvim ~/.config/niri/config.kdl'
  alias pgcreate="~/Codigos_Arch/Scripts/criar_banco.zsh"
  alias Wallpaper="~/Codigos_Arch/Scripts/SetWall.zsh"
  alias pgctl="~/Codigos_Arch/Scripts/Pgctl.zsh"
- alias hypr="start-hyprland"
- 
+ alias Jarvis="niri-session"
+ source /usr/share/nvm/init-nvm.sh 
  # Substitui o alias no teu .bashrc:
 alias ls='exa'
 alias ll='exa -lhF'
@@ -93,15 +101,12 @@ open-nvim() {
         xdg-open "$file"
     fi
 }
-
-~/.local/bin/phosphor-green
-~/.local/bin/tty-cursor-bar
-
 # Force green text for input in TTY
-if [ "$TERM" = "linux" ]; then
+if [ "$TERM" = "Jarvis" ]; then
     # Define todas as cores de linha de comando como verde
     zle_highlight=(region:fg=10 special:fg=10 suffix:fg=10)
     
     # Força cor verde para todo o input
     export ZSH_HIGHLIGHT_STYLES='command:fg=10 alias:fg=10 builtin:fg=10 function:fg=10 reserved-word:fg=10 arg0:fg=10'
 fi
+export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"

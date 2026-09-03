@@ -4,8 +4,8 @@ binds {
     Mod+T { spawn "kitty"; }
     Mod+Space { spawn "fuzzel"; }
     Mod+Y { spawn "kitty" "-e" "yazi"; }
-    Menu { spawn "sh" "-c" "kitty nvim"; }
-    Home { spawn "obsidian"; }
+    Home { spawn "sh" "-c" "kitty nvim"; }
+    Menu { spawn "obsidian"; }
 
 
     //Navegação e Movimento (Setas)
@@ -77,7 +77,7 @@ binds {
     Mod+Shift+4 { move-column-to-workspace 4; }
 
     // Gestão de Janelas
-    Mod+Escape {close-window;}
+    Mod+Q {close-window;}
     Mod+F        { maximize-column; }
     Mod+Shift+F  { fullscreen-window; }
     Mod+V        { toggle-window-floating; }

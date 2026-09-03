@@ -1,5 +1,5 @@
 return {
-  -- 1. O Instalador (Mason)
+  -- 1. Mason
   {
     "williamboman/mason.nvim",
     config = function()
@@ -7,28 +7,28 @@ return {
     end,
   },
 
-  -- 2. O Configurador de LSPs (LSPConfig Bridge)
+  -- 2. Mason-LSPConfig (apenas para garantir o download automático)
   {
     "williamboman/mason-lspconfig.nvim",
+    dependencies = { "neovim/nvim-lspconfig" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ts_ls", "pyright", "clangd", "sqls" },
+        ensure_installed = { "lua_ls", "ts_ls", "clangd", "sqls", "solargraph" },
       })
     end,
   },
 
-  -- 3. A Ferramenta de Base de Dados (Dadbod)
+  -- 3. Dadbod
   {
     "tpope/vim-dadbod",
     lazy = true,
   },
 
-  -- 4. A Interface Visual para o Dadbod
+  -- 4. Dadbod UI
   {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
       { "tpope/vim-dadbod", lazy = true },
-      -- Adiciona autocompletar para tabelas/colunas
       { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
     },
     cmd = {
@@ -38,7 +38,6 @@ return {
       "DBUIFindBuffer",
     },
     init = function()
-      -- Atalhos para facilitar a vida na interface
       vim.g.db_ui_show_help = 0
       vim.g.db_ui_win_width = 35
     end,

@@ -20,7 +20,6 @@ vim.opt.splitbelow = true -- Abrir novos splits horizontais em baixo
 vim.opt.splitright = true -- Abrir novos splits verticais à direita
 
 
-
 -- Abre/Fecha o banco de dados com <Leader>db
 vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { noremap = true, silent = true })
 

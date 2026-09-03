@@ -51,8 +51,8 @@ spawn-at-startup "sh" "-c" "while ! busctl --user status org.gnome.Mutter.Screen
 spawn-at-startup "sh" "-c" "wl-paste --type text --watch cliphist store"
 spawn-at-startup "sh" "-c" "wl-paste --type image --watch cliphist store"
 spawn-at-startup "sh" "-c" "cliphist wipe"
-
-spawn-at-startup "sh" "-c" "awww-daemon --format xrgb && sleep 1 && awww img /home/flix/dotfiles/wallpapers/fuji.png"
+spawn-at-startup "/home/flix/.local/bin/toggle_teclado"
+spawn-at-startup "sh" "-c" "awww-daemon --format xrgb && sleep 1 && awww img /home/flix/wallpapers/gaming.png"
 
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "XCURSOR_THEME=Adwaita" "XCURSOR_SIZE=48"
 
