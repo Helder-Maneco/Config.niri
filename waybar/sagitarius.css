@@ -1,0 +1,90 @@
+* {
+  font-family: 'JetBrainsMono Nerd Font', 'Noto Sans CJK JP';
+  font-size: 18px;
+  border: none;
+}
+
+/* ── Paleta Sagittarius A* (Black Hole / Cosmic) ── */
+@define-color meta-bg      #08060a; /* Espaço Profundo (fundo principal) */
+@define-color meta-active  #ffea9f; /* Luz Incandescente do Anel (destaque ativo) */
+@define-color meta-border  #382435; /* Roxo Escuro da Poeira (bordas discretas) */
+@define-color meta-dim     #634a60; /* Poeira Cobre Apagada (itens desativados) */
+@define-color meta-muted   #e1d2df; /* Poeira Estelar Suave (texto principal) */
+@define-color meta-hover   #140f17; /* Sombra Violeta Elevada (fundo dos blocos) */
+@define-color meta-accent  #e28d5c; /* Laranja/Cobre do Disco (hovers/destaques) */
+
+/* ── Waybar: retângulo único flutuante ── */
+window#waybar {
+  background: transparent;
+  color: @meta-muted;
+}
+
+window#waybar > box {
+  background-color: @meta-bg;
+  border-radius: 6px;
+  margin: 0;
+  padding: 0 6px;
+}
+
+/* ── Módulos: sem fundo próprio ── */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+  border: none;
+  padding: 2px 8px;
+  margin: 0;
+}
+
+/* ── Bloco padrão — sem bordas ── */
+#workspaces button,
+#custom-menu-arrow,
+#custom-pen,
+#custom-search,
+#clock,
+#network,
+#bluetooth,
+#tray,
+#pulseaudio,
+#battery,
+#disk,
+#temperature,
+#cpu,
+#memory {
+  background: @meta-hover;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 12px;
+  margin: 2px 4px;
+  color: @meta-muted;
+  font-weight: 600;
+  transition: all 0.15s ease-out;
+}
+
+/* ── Workspace ativo — brilho incandescente do anel ── */
+#workspaces button.active {
+  background: @meta-active;
+  color: @meta-bg;
+  border: none;
+}
+
+/* ── Hover — transiciona para o tom laranja cobre ── */
+#workspaces button:hover,
+#custom-menu-arrow:hover,
+#custom-pen:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover {
+  background: @meta-accent;
+  color: @meta-bg;
+  border: none;
+}
+
+#network.disconnected {
+  color: @meta-dim;
+  background: @meta-bg;
+  border: none;
+}

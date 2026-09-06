@@ -3,25 +3,29 @@
   font-size: 18px;
   border: none;
 }
-/* ── Paleta Retro Gaming Room (baseada no wallpaper) ── */
-@define-color meta-bg      #170f08; /* Preto acastanhado quente (sombras do quarto) */
-@define-color meta-active  #ffb454; /* Âmbar do candeeiro (destaque principal) */
-@define-color meta-border  #4a3220; /* Castanho madeira (painel/secretária) */
-@define-color meta-dim     #6b5138; /* Castanho apagado para itens desativados */
-@define-color meta-muted   #e8cda3; /* Creme papíreo quente (texto principal) */
-@define-color meta-hover   #241608; /* Fundo levemente mais claro para os blocos */
-@define-color meta-accent  #5ecfc9; /* Ciano do ecrã CRT (Byte Blaster) para destaque/hover */
+
+/* ── Paleta Noir City (Monochrome Night Sky) ── */
+@define-color meta-bg      #0f0f0f; /* Céu Noturno / Fundo Escuro */
+@define-color meta-active  #ffffff; /* Luzes Brilhantes / Ativo */
+@define-color meta-border  #2b2b2b; /* Cinza Escuro para Detalhes e Bordas */
+@define-color meta-dim     #555555; /* Cinza Médio / Desativado */
+@define-color meta-muted   #d1d1d1; /* Prata Claro / Texto Principal */
+@define-color meta-hover   #1f1f1f; /* Sombra dos Edifícios / Fundo dos Blocos */
+@define-color meta-accent  #e0e0e0; /* Cinza Claro Luminoso / Hover e Destaque */
+
 /* ── Waybar: retângulo único flutuante ── */
 window#waybar {
   background: transparent;
   color: @meta-muted;
 }
+
 window#waybar > box {
   background-color: @meta-bg;
   border-radius: 6px;
   margin: 0;
   padding: 0 6px;
 }
+
 /* ── Módulos: sem fundo próprio ── */
 .modules-left,
 .modules-center,
@@ -31,6 +35,7 @@ window#waybar > box {
   padding: 2px 8px;
   margin: 0;
 }
+
 /* ── Bloco padrão — sem bordas ── */
 #workspaces button,
 #custom-menu-arrow,
@@ -55,13 +60,15 @@ window#waybar > box {
   font-weight: 600;
   transition: all 0.15s ease-out;
 }
-/* ── Workspace ativo — brilho âmbar do candeeiro ── */
+
+/* ── Workspace ativo — brilho intenso das luzes da cidade ── */
 #workspaces button.active {
   background: @meta-active;
   color: @meta-bg;
   border: none;
 }
-/* ── Hover — transiciona para o ciano do ecrã CRT ── */
+
+/* ── Hover — transiciona para o cinza claro luminoso ── */
 #workspaces button:hover,
 #custom-menu-arrow:hover,
 #custom-pen:hover,
@@ -75,6 +82,7 @@ window#waybar > box {
   color: @meta-bg;
   border: none;
 }
+
 #network.disconnected {
   color: @meta-dim;
   background: @meta-bg;

@@ -1,5 +1,5 @@
 layout {
-    gaps 5
+    gaps 8
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -9,7 +9,7 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-	off
+        off
     }
 
     border {
@@ -32,19 +32,47 @@ window-rule {
     match app-id=r#"^helium$"# title=r#"^(Picture-in-Picture|Imagem em imagem)$"#
     open-floating true
 }
-
+window-rule {
+    match app-id="fuzzel"
+    draw-border-with-background false
+}
+gestures {
+    hot-corners {
+        off
+    }
+}
 overview {
-    backdrop-color "#1f0f08a1" 
+    backdrop-color "#0f0f0f"
 }
+
+/* ── Animações (Sintaxe Oficial e Padrão Niri) ── */
 animations {
-  slowdown 1.4
+    window-open {
+        duration-ms 220
+        curve "ease-out-quad"
+    }
+    window-close {
+        duration-ms 180
+        curve "ease-out-quad"
+    }
+    // damping-ratio >= 1.0 = sem bounce, só desliza e assenta suave
+    window-movement {
+        spring damping-ratio=1.0 stiffness=600 epsilon=0.0001
+    }
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=650 epsilon=0.0001
+    }
+    horizontal-view-movement {
+        spring damping-ratio=1.1 stiffness=550 epsilon=0.0001
+    }
+    window-resize {
+        spring damping-ratio=1.0 stiffness=600 epsilon=0.0001
+    }
 }
-
-
 blur {
+    off
     passes 2        
     offset 2.0
     noise 0.02
     saturation 1
 }
-

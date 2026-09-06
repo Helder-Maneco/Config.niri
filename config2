@@ -1,0 +1,36 @@
+
+# ~/.config/mako/config
+# Paleta Retro Gaming Room (mesma da waybar)
+
+font=JetBrainsMono Nerd Font 15
+
+background-color=#170f08ee
+text-color=#e8cda3
+border-color=#ffb454
+border-size=2
+border-radius=6
+
+width=350
+height=120
+margin=10
+padding=12
+anchor=top-right
+
+default-timeout=4000
+max-visible=5
+sort=-time
+layer=overlay
+
+icons=1
+max-icon-size=48
+
+# Notificações urgentes usam o ciano do ecrã CRT, igual ao hover da waybar
+[urgency=critical]
+border-color=#5ecfc9
+background-color=#170f08ee
+default-timeout=0
+
+# Notificações de baixa prioridade ficam mais discretas
+[urgency=low]
+border-color=#6b5138
+text-color=#6b5138

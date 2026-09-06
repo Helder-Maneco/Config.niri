@@ -42,11 +42,11 @@ binds {
     // Sistema
     F1 { spawn "systemctl" "hibernate"; }
     End { spawn "systemctl" "poweroff"; }
-    Ctrl+Escape { spawn "sh" "-c" "killall waybar || waybar"; }
+    Ctrl+Escape { spawn "sh" "-c" "killall waybar || LANG=pt_BR.UTF-8 LC_TIME=pt_BR.UTF-8 waybar"; }
     // Atalho para o histórico do Clipboard usando Fuzzel
     Alt+V  { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     // Screenshots
-    Print { spawn "sh" "-c" "grim -g \"$(slurp)\" ~/Imagens/$(date +%Y-%m-%d_%H-%M-%S).png && wl-copy < ~/Imagens/$(date +%Y-%m-%d_%H-%m-%S).png"; }
+    Print { spawn "sh" "-c" "grim -g \"$(slurp)\" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).png && wl-copy < ~/Pictures/$(date +%Y-%m-%d_%H-%m-%S).png"; }
     Mod+Print { spawn "sh" "-c" "grim ~/Pictures/$(date +%Y-%m-%d_%H-%m-%S).png && wl-copy < ~/Pictures/$(date +%Y-%m-%d_%H-%m-%S).png"; }
 
     // Audio - Protocolo de Compatibilidade Total
@@ -77,7 +77,7 @@ binds {
     Mod+Shift+4 { move-column-to-workspace 4; }
 
     // Gestão de Janelas
-    Mod+Q {close-window;}
+    Mod+Escape {close-window;}
     Mod+F        { maximize-column; }
     Mod+Shift+F  { fullscreen-window; }
     Mod+V        { toggle-window-floating; }

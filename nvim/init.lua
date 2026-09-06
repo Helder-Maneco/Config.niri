@@ -30,6 +30,12 @@ vim.keymap.set('n', '<leader>S', '<Plug>(DBUI_ExecuteQuery)', { noremap = false 
 
 
 -- Força a transparência da coluna lateral e dos números
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.conceallevel = 2
+  end,
+})
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })

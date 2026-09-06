@@ -40,12 +40,12 @@
         "spacing": 10
    },
 
-"clock": { 
-     "timezone": "Africa/Luanda",
-     "format": " {:%H:%M}",
-     "format-alt": "{:%A, %d %b %Y — %H:%M:%S}",
-     "interval": 10,
-     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+   "clock": { 
+    "timezone": "Africa/Luanda",
+    "format": "  {:%H:%M}",
+    "format-alt": "  {:%A, %d de %B de %Y - %H:%M:%S}",
+    "interval": 1,
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 },
     
 "mpris": {
