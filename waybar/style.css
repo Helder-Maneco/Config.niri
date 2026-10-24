@@ -2,26 +2,32 @@
   font-family: 'JetBrainsMono Nerd Font', 'Noto Sans CJK JP';
   font-size: 18px;
   border: none;
+  border-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
 }
 
-/* ── Paleta Noir City (Monochrome Night Sky) ── */
-@define-color meta-bg      #0f0f0f; /* Céu Noturno / Fundo Escuro */
-@define-color meta-active  #ffffff; /* Luzes Brilhantes / Ativo */
-@define-color meta-border  #2b2b2b; /* Cinza Escuro para Detalhes e Bordas */
-@define-color meta-dim     #555555; /* Cinza Médio / Desativado */
-@define-color meta-muted   #d1d1d1; /* Prata Claro / Texto Principal */
-@define-color meta-hover   #1f1f1f; /* Sombra dos Edifícios / Fundo dos Blocos */
-@define-color meta-accent  #e0e0e0; /* Cinza Claro Luminoso / Hover e Destaque */
+/* ── Paleta Âmbar Escuro / Monocromático CRT ── */
+@define-color meta-bg      #0a0400; /* Fundo âmbar quase preto */
+@define-color meta-active  #f5b870; /* Destaque âmbar brilhante */
+@define-color meta-dim     #522800; /* Âmbar muito escuro/apagado */
+@define-color meta-muted   #9e6c00; /* Âmbar médio (texto principal) */
+@define-color meta-accent  #d27c00; /* Âmbar secundário */
 
 /* ── Waybar: retângulo único flutuante ── */
 window#waybar {
   background: transparent;
   color: @meta-muted;
+  border: none;
+  box-shadow: none;
 }
 
 window#waybar > box {
   background-color: @meta-bg;
   border-radius: 6px;
+  border: none;
+  box-shadow: none;
   margin: 0;
   padding: 0 6px;
 }
@@ -32,15 +38,17 @@ window#waybar > box {
 .modules-right {
   background: transparent;
   border: none;
+  box-shadow: none;
   padding: 2px 8px;
   margin: 0;
 }
 
-/* ── Bloco padrão — sem bordas ── */
+/* ── Bloco padrão — Fundo transparente (Com #custom-pomoru incluído) ── */
 #workspaces button,
 #custom-menu-arrow,
 #custom-pen,
 #custom-search,
+#custom-pomoru,
 #clock,
 #network,
 #bluetooth,
@@ -51,8 +59,10 @@ window#waybar > box {
 #temperature,
 #cpu,
 #memory {
-  background: @meta-hover;
+  background: transparent;
   border: none;
+  box-shadow: none;
+  outline: none;
   border-radius: 6px;
   padding: 2px 12px;
   margin: 2px 4px;
@@ -61,30 +71,67 @@ window#waybar > box {
   transition: all 0.15s ease-out;
 }
 
-/* ── Workspace ativo — brilho intenso das luzes da cidade ── */
-#workspaces button.active {
-  background: @meta-active;
-  color: @meta-bg;
+/* ── Módulo de Energia (Group / Drawer) ── */
+#group-power {
+  background: transparent;
   border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* ── Hover — transiciona para o cinza claro luminoso ── */
+#custom-power-icon,
+#custom-poweroff,
+#custom-reboot,
+#custom-hibernate,
+#custom-lock {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  border-radius: 6px;
+  padding: 2px 10px;
+  margin: 2px 3px;
+  color: @meta-muted;
+  font-weight: 600;
+  transition: all 0.15s ease-out;
+}
+
+/* ── Workspace ativo (Apenas o contorno) ── */
+#workspaces button.active {
+  background: transparent;
+  color: @meta-active;
+  border: 1px solid @meta-muted; /* Borda fina clara âmbar */
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+/* ── Hover (Com #custom-pomoru:hover incluído) ── */
 #workspaces button:hover,
 #custom-menu-arrow:hover,
 #custom-pen:hover,
+#custom-search:hover,
+#custom-pomoru:hover,
+#custom-power-icon:hover,
+#custom-poweroff:hover,
+#custom-reboot:hover,
+#custom-hibernate:hover,
+#custom-lock:hover,
 #network:hover,
 #bluetooth:hover,
 #pulseaudio:hover,
 #battery:hover,
 #cpu:hover,
 #memory:hover {
-  background: @meta-accent;
-  color: @meta-bg;
+  background: #210f00; /* Fundo âmbar escuro para o efeito hover */
+  color: @meta-active;
   border: none;
+  box-shadow: none;
 }
 
 #network.disconnected {
   color: @meta-dim;
-  background: @meta-bg;
+  background: transparent;
   border: none;
+  box-shadow: none;
 }

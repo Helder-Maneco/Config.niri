@@ -1,0 +1,12 @@
+# Barra de tabs dos grupos - Sincronizada com a paleta do terminal
+group_bar_height=28
+group_bar_decorate_bg_color=0x0e0f16ff
+group_bar_decorate_fg_color=0xa39fc4ff
+group_bar_decorate_focus_bg_color=0x00b4d8ff
+group_bar_decorate_focus_fg_color=0x0e0f16ff
+group_bar_decorate_border_color=0x2b2c3bff
+group_bar_decorate_border_width=0
+group_bar_decorate_corner_radius=0
+group_bar_decorate_padding_x=8
+group_bar_decorate_padding_y=0
+group_bar_decorate_font_desc=JetBrainsMono Nerd Font 11

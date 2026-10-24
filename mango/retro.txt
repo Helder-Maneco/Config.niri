@@ -1,0 +1,13 @@
+# Barra de tabs dos grupos , com a paleta do resto da config
+group_bar_height=28
+group_bar_decorate_bg_color=0x201b14ff
+group_bar_decorate_fg_color=0xc9b890ff
+group_bar_decorate_focus_bg_color=0xc9b890ff
+group_bar_decorate_focus_fg_color=0x201b14ff
+group_bar_decorate_border_color=0x444444ff
+group_bar_decorate_border_width=0
+group_bar_decorate_corner_radius=0
+group_bar_decorate_padding_x=8
+group_bar_decorate_padding_y=0
+group_bar_decorate_font_desc=Jet 11
+
