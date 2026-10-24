@@ -1,0 +1,65 @@
+" ── Configurações de Aparência e Cores ──
+syntax on
+set termguicolors
+set background=dark
+set relativenumber
+
+" Tenta carregar o catppuccin; caso não esteja instalado, usa o tema nativo
+silent! colorscheme catppuccin-mocha
+
+" ── Overrides (Paleta Catppuccin Mocha / Cyberpunk Workshop) ──
+" Fundo escuro azulado e texto principal
+highlight Normal guifg=#cdd6f4 guibg=#11131f
+highlight NormalNC guifg=#4a6878 guibg=#07080e
+
+" Coluna lateral e numeração de linhas
+highlight SignColumn guibg=#11131f
+highlight LineNr guifg=#3b4261 guibg=#11131f
+highlight CursorLine guibg=#18202a
+highlight CursorLineNr guifg=#e5c890 gui=bold
+
+" Seleção visual e busca (Destaques em Amarelo/Dourado e Ciano)
+highlight Visual guifg=#07080e guibg=#e5c890
+highlight Search guifg=#07080e guibg=#38cda6
+
+" Divisores de janela
+highlight VertSplit guifg=#18202a guibg=#11131f
+
+" Barra de status nativa (StatusLine ativas e inativas)
+highlight StatusLine guifg=#38cda6 guibg=#18202a gui=bold
+highlight StatusLineNC guifg=#4a6878 guibg=#07080e gui=none
+
+" Popups e Menus de Autocompletar (Pmenu)
+highlight Pmenu guifg=#cdd6f4 guibg=#18202a
+highlight PmenuSel guifg=#07080e guibg=#38cda6 gui=bold
+set relativenumber
+
+" ── Definir a tecla Leader para Espaço ──
+let mapleader = " "
+
+" ── Mover linhas selecionadas para cima/baixo (Modo Visual) ──
+xnoremap J :m '>+1<CR>gv=gv
+xnoremap K :m '<-2<CR>gv=gv
+
+" ── Navegação rápida entre janelas/splits (Ctrl + h/j/k/l) ──
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" ── Redimensionar janelas com as setas ──
+nnoremap <C-Up>    :resize -2<CR>
+nnoremap <C-Down>  :resize +2<CR>
+nnoremap <C-Left>  :vertical resize -2<CR>
+nnoremap <C-Right> :vertical resize +2<CR>
+
+" ── Limpar destaques de busca com <Esc> ──
+nnoremap <Esc> :noh<CR>
+
+" ── Netrw (Navegador de arquivos nativo do Vim) ──
+" Espaço + e para abrir/fechar o explorador de arquivos
+nnoremap <leader>e :Lexplore<CR>
+
+" Ajusta o tamanho da barra lateral do Netrw
+let g:netrw_winsize = 25
+let g:netrw_banner = 0 " Remove o cabeçalho do Netrw

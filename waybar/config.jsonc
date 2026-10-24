@@ -1,21 +1,25 @@
 {
     "layer": "top",
     "position": "top",
+    "passthrough": false,  
     "height": 36,
     "width": 1800,
     "margin-top": 7,
     "spacing": 0,
+    "exclusive": true,
+    "gtk-layer-shell": true,
 
-"modules-left": [
-        "custom/power",
-        "niri/workspaces",
+    "modules-left": [
+        "group/power",
+        "ext/workspaces",
+        "custom/pomoru",
 	"tray",
-	"mpris"
+        "mpris"
     ],
-"modules-center": [
+    "modules-center": [
         "clock"
     ],
-"modules-right": [
+    "modules-right": [
         "pulseaudio",
         "network",
         "cpu",
@@ -23,92 +27,135 @@
         "temperature"
     ],
 
-"niri/workspaces": {
+    "ext/workspaces": {
         "format": "{icon}",
         "icon-size": 10,
         "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "empty": "二"
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "empty": "."
         }
-      },
-"tray": {
+    },
+
+    "tray": {
         "icon-size": 21,
         "spacing": 10
-   },
+    },
 
-   "clock": { 
-    "timezone": "Africa/Luanda",
-    "format": "  {:%H:%M}",
-    "format-alt": "  {:%A, %d de %B de %Y - %H:%M:%S}",
-    "interval": 1,
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-},
+    "clock": { 
+        "timezone": "Africa/Luanda",
+        "format": "  {:%H:%M}",
+        "format-alt": "  {:%A, %d de %B de %Y - %H:%M:%S}",
+        "interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
     
-"mpris": {
-    "player": "spotify",
-    "format": "{status_icon} {title} - {artist}",
-    "format-paused": "{player_icon} {status_icon}",
-    "format-stopped": "",
-    "player-icons": {
-        "default": "▶",
-        "spotify": ""
-    },
-    "status-icons": {
-        "paused": "⏸",
-        "playing": "▶",
-        "stopped": "■"
-    },
-     "max-length": 25,
-     "interval": 1,
-     "on-click": "playerctl -p spotify play-pause ",
-     "on-click-right": "playerctl -p spotify next",
-     "on-scroll-up": "playerctl -p spotify previous",
-      "on-scroll-down": "playerctl -p spotify next",
-      "tooltip-format": "{title} - {artist} Album: {album}"
-},
-
-"cpu": {
-             "format": " {usage}%",
-             "on-click": "kitty --class htop_float -e htop"
-    },
-"memory": {
-              "format": " {}%",
-              "on-click": "kitty --class htop_float -e htop"
-    },
-"temperature": {
-              "critical-threshold": 80,
-              "format-icons": [""],
-              "format": " {icon} {temperatureC}°C"
-    },
-
-"network": {
-              "format-wifi": "{icon} ",
-              "format-ethernet": "󰈀",
-              "format-disconnected": "󰤮",
-              "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-              "tooltip-format": "{essid} - {signalStrength}%",
-              "on-click": "kitty --class impala_float -e impala"
-},
-
-"pulseaudio": {
-           "format": "{icon}",
-	   "format-icons": ["", "", " "],
-           "format-bluetooth": "",
-           "format-bluetooth-muted": " {icon} {format_source}"
-    },
-"custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-        "spotify": "",
-        "default": "🎜"
+    "mpris": {
+        "player": "spotify",
+        "format": "{status_icon} {title} - {artist}",
+        "format-paused": "{player_icon} {status_icon}",
+        "format-stopped": "",
+        "player-icons": {
+            "default": "▶",
+            "spotify": ""
         },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" 
+        "status-icons": {
+            "paused": "⏸",
+            "playing": "▶",
+            "stopped": "■"
+        },
+        "max-length": 25,
+        "interval": 1,
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "playerctl -p spotify next",
+        "on-scroll-up": "playerctl -p spotify previous",
+        "on-scroll-down": "playerctl -p spotify next",
+        "tooltip-format": "{title} - {artist} Album: {album}"
+    },
+
+    "custom/pomoru": {
+        "exec": "cat ~/.cache/pomoru/status.json 2>/dev/null",
+        "return-type": "json",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": true,
+        "on-click-release": "pomoru toggle",
+        "on-click-right-release": "pomoru reset",
+        "on-scroll-up-release": "pomoru next",
+        "on-scroll-down-release": "pomoru prev"
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "on-click": "kitty --class htop_float -e htop"
+    },
+
+    "memory": {
+        "format": " {}%",
+        "on-click": "kitty --class htop_float -e htop"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format-icons": [""],
+        "format": " {icon} {temperatureC}°C"
+    },
+
+    "network": {
+        "format-wifi": "{icon} ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤮",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format": "{essid} - {signalStrength}%",
+        "on-click": "kitty --class impala_float -e sudo impala"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-icons": ["", "", " "],
+        "format-bluetooth": "",
+        "format-bluetooth-muted": " {icon} {format_source}"
+    },
+
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-power",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/power-icon",
+            "custom/poweroff",
+            "custom/reboot",
+            "custom/hibernate",
+            "custom/lock"
+        ]
+    },
+
+    "custom/power-icon": {
+        "format": "󰣇",
+        "tooltip": false
+    },
+
+    "custom/poweroff": {
+        "format": "  ",
+        "tooltip-format": "Desligar",
+        "on-click": "systemctl poweroff"
+    },
+
+    "custom/reboot": {
+        "format": "  ",
+        "tooltip-format": "Reiniciar",
+        "on-click": "systemctl reboot"
+    },
+
+    "custom/hibernate": {
+        "format": " 󰤄 ",
+        "tooltip-format": "Hibernar",
+        "on-click": "systemctl hibernate"
     }
 }

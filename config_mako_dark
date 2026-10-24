@@ -1,0 +1,46 @@
+# ~/.config/mako/config
+# Paleta Catppuccin Mocha / Cyberpunk Workshop
+
+font=JetBrainsMono Nerd Font 16
+
+# Fundo Grafite Escuro com opacidade suave (cc = ~80%)
+background-color=#11131fcc
+text-color=#cdd6f4
+# Borda Azul/Ciano Retro
+border-color=#38cda6
+border-size=1
+border-radius=8
+
+width=350
+height=120
+margin=12
+padding=14
+anchor=top-right
+
+default-timeout=4000
+max-visible=5
+sort=-time
+layer=overlay
+
+icons=1
+max-icon-size=48
+
+# Urgência Baixa (Tom Azul Apagado/Discreto)
+[urgency=low]
+background-color=#07080e99
+text-color=#4a6878
+border-color=#18202a
+
+# Urgência Normal (Texto Claro e Borda Ciano)
+[urgency=normal]
+background-color=#11131fcc
+text-color=#cdd6f4
+border-color=#38cda6
+
+# Urgência Crítica (Destaque Amarelo/Dourado do Braço Robótico)
+[urgency=critical]
+background-color=#11131fee
+text-color=#e5c890
+border-color=#e5c890
+border-size=2
+default-timeout=0

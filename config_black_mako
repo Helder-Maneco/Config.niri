@@ -1,0 +1,45 @@
+# ~/.config/mako/config
+# Paleta Pitch Black & Neon CLI
+
+font=JetBrainsMono Nerd Font 16
+
+# Fundo Preto Puro com leve transparência (e6) e Borda Ciano Neon
+background-color=#000000e6
+text-color=#ffffff
+border-color=#00e5ff
+border-size=2
+border-radius=8
+
+width=350
+height=120
+margin=12
+padding=14
+anchor=top-right
+
+default-timeout=4000
+max-visible=5
+sort=-time
+layer=overlay
+
+icons=1
+max-icon-size=48
+
+# Urgência Baixa (Verde Neon)
+[urgency=low]
+background-color=#000000e6
+text-color=#00ff66
+border-color=#00ff66
+
+# Urgência Normal (Ciano Neon & Roxo)
+[urgency=normal]
+background-color=#000000e6
+text-color=#ffffff
+border-color=#00e5ff
+
+# Urgência Crítica (Vermelho Neon Alerta)
+[urgency=critical]
+background-color=#000000f2
+text-color=#ff0033
+border-color=#ff0033
+border-size=2
+default-timeout=0

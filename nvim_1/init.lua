@@ -1,0 +1,67 @@
+ require('config.options')
+ require('config.keybinds')
+ require('config.lazy')
+
+ -- Silenciar avisos de deprecation (como o do lspconfig)
+vim.deprecate = function() end
+
+-- Mover linhas selecionadas para cima/baixo (Modo Visual)
+vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Mover seleção para baixo" })
+
+vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Mover seleção para cima" })
+-- 1. Abrir o terminal (mantemos o comando que já funciona bem)
+vim.keymap.set('n', '<C-`>', '<CMD>botright split | resize 10 | term<CR>i', { desc = "Abrir terminal" })
+vim.opt.clipboard = "unnamedplus"
+
+-- Navegar para a próxima aba com Ctrl+Tab
+vim.keymap.set('n', '<C-tab>', ':BufferLineCycleNext<CR>', { silent = true, desc = "Próximo buffer" })
+vim.keymap.set('n', '<C-tab>', ':BufferLineCyclePrev<CR>', { silent = true, desc = "Buffer anterior" })
+vim.g.mapleader = " " -- Aqui, o espaço foi definido como leader
+
+-- O comando ':q!' força o fecho da janela do terminal mesmo que haja processos a correr
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>:q!<CR>]], { desc = "Sair e fechar terminal" })
+vim.opt.splitbelow = true -- Abrir novos splits horizontais em baixo
+vim.opt.splitright = true -- Abrir novos splits verticais à direita
+
+-- Abre/Fecha o banco de dados com <Leader>db
+vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { noremap = true, silent = true })
+
+-- Executa a linha atual no banco de dados com <Leader>S
+vim.keymap.set('n', '<leader>S', '<Plug>(DBUI_ExecuteQuery)', { noremap = false })
+
+-- Força a transparência da coluna lateral e dos números
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.conceallevel = 2
+  end,
+})
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
+
+vim.cmd([[
+  highlight SignColumn guibg=NONE
+  highlight LineNr guibg=NONE
+  highlight CursorLineNr guibg=NONE
+]])
+
+-- Abrir/Fechar a árvore com um comando rápido
+vim.keymap.set('n', '<C-s>', ':NvimTreeToggle<CR>', { silent = true })
+vim.keymap.set('n', '<leader>e', ':NvimTreeFocus<CR>', { silent = true })
+
+-- Força as cores a serem monocromáticas na árvore
+vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = "#abb2bf" })
+vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = "#abb2bf" })
+vim.api.nvim_set_hl(0, "NvimTreeEmptyFolderName", { fg = "#abb2bf" })
+vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#abb2bf" })
+-- Isso mantém os ícones, mas remove as cores "carnaval"
+vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#abb2bf" })
+vim.cmd([[
+  highlight Normal guibg=none ctermbg=none
+  highlight NonText guibg=none ctermbg=none
+  highlight NormalNC guibg=none ctermbg=none
+  highlight SignColumn guibg=none ctermbg=none
+  highlight StatusLine guibg=none ctermbg=none
+]])
+vim.api.nvim_set_hl(0, "NvimTreeFileIcon", { fg = "#abb2bf" })

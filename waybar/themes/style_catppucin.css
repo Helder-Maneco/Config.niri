@@ -1,0 +1,117 @@
+*{
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 18px;
+  border: none;
+}
+/* ── Paleta Cybot ── */
+@define-color meta-bg      #0e0f16;
+@define-color meta-active  #00b4d8;
+@define-color meta-border  #2b2c3b;
+@define-color meta-dim     #3c4159;
+@define-color meta-muted   #a39fc4;
+@define-color meta-hover   #1a1c28;
+@define-color meta-accent  #dda15e;
+
+/* ── Waybar ── */
+window#waybar {
+  background: transparent;
+  color: @meta-muted;
+}
+
+window#waybar > box {
+  background-color: @meta-bg;
+  border-radius: 6px;
+  margin: 0;
+  padding: 0 6px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+  border: none;
+  padding: 2px 8px;
+  margin: 0;
+}
+
+#workspaces button,
+#custom-menu-arrow,
+#custom-pen,
+#custom-search,
+#custom-pomoru,
+#mpris,
+#clock,
+#network,
+#bluetooth,
+#tray,
+#pulseaudio,
+#battery,
+#disk,
+#temperature,
+#cpu,
+#memory {
+  background: @meta-hover;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 12px;
+  margin: 2px 4px;
+  color: @meta-muted;
+  font-weight: 600;
+  transition: all 0.15s ease-out;
+}
+
+#group-power {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+#custom-power-icon,
+#custom-poweroff,
+#custom-reboot,
+#custom-hibernate,
+#custom-lock {
+  background: @meta-hover;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 10px;
+  margin: 2px 3px;
+  color: @meta-muted;
+  font-weight: 600;
+  transition: all 0.15s ease-out;
+}
+
+#workspaces button.active {
+  background: @meta-active;
+  color: @meta-bg;
+  border: none;
+}
+
+#workspaces button:hover,
+#custom-menu-arrow:hover,
+#custom-pen:hover,
+#custom-search:hover,
+#custom-pomoru:hover,
+#mpris:hover,
+#custom-power-icon:hover,
+#custom-poweroff:hover,
+#custom-reboot:hover,
+#custom-hibernate:hover,
+#custom-lock:hover,
+#clock:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover {
+  background: @meta-accent;
+  color: @meta-bg;
+  border: none;
+}
+
+#network.disconnected {
+  color: @meta-dim;
+  background: @meta-bg;
+  border: none;
+}
